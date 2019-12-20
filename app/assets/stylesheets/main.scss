@@ -3,7 +3,7 @@
 
 
 .backdrop {
-	background: url(<%= asset_path 'snow-wolf.jpg' %>) center;
+	background: image-url('snow-wolf.jpg') center;
 	background-size: cover;
 	margin: auto;
 	width: 75vw;

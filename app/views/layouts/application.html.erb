@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Advrails</title>
+    <title><%= yield(:title) %> | SUpost</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -16,5 +16,6 @@
 
   <body>
     <%= yield %>
+    <%= render 'layouts/header' %>
   </body>
 </html>

@@ -1,6 +1,19 @@
+/********************/
+/* Import bootstrap */
+/********************/
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/*******************/
+/* Color Variables */
+/*******************/
+
+$bg-gray: #eeeeee;
+
+.bg-gray {
+	background-color: $bg-gray;
+}
 
 .backdrop {
 	background: image-url('snow-wolf.jpg') center;

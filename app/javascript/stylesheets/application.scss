@@ -3,10 +3,6 @@
 $bg-su-blue: #083472;
 .navbar {
 
-	.navbar-toggler {
-		background-color: $bg-su-blue;
-	}
-
 	.navbar-collapse {
 		background-color: $bg-su-blue;
 		padding: 5px;
@@ -15,5 +11,20 @@ $bg-su-blue: #083472;
 
 	.navbar-brand {
 		font-weight: bolder;
+	}
+}
+
+.navbar-dark {
+
+	button.navbar-toggler:focus {
+		outline: none;
+	}
+
+	.navbar-toggler-icon {
+		background: image-url('../../assets/images/menu.svg') center;
+		background-color: $bg-su-blue;
+		width: 2em;
+		height: 2em;
+		border-radius: 5px;
 	}
 }

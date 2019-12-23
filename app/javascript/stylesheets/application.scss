@@ -2,7 +2,16 @@
 
 $bg-su-blue: #083472;
 .navbar {
-	background-color: $bg-su-blue;
+
+	.navbar-toggler {
+		background-color: $bg-su-blue;
+	}
+
+	.navbar-collapse {
+		background-color: $bg-su-blue;
+		padding: 5px;
+		border-radius: 10px 10px 0px 0px;
+	}
 
 	.navbar-brand {
 		font-weight: bolder;

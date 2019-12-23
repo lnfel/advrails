@@ -1,1 +1,10 @@
 @import "bootstrap";
+
+$bg-su-blue: #083472;
+.navbar {
+	background-color: $bg-su-blue;
+
+	.navbar-brand {
+		font-weight: bolder;
+	}
+}

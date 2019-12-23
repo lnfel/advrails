@@ -13,6 +13,7 @@ require("channels")
 //= require bootstrap-sprockets
 import "bootstrap";
 import "../stylesheets/application";
+import "../stylesheets/custom";
 import "./custom";
 
 // Uncomment to copy all static images under ../images to the output folder and reference

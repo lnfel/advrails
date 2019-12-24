@@ -1,6 +1,11 @@
+/* Import */
 @import "bootstrap";
 
+/* Color Variables */
 $su-blue: #083472;
+
+
+/* Bootstrap Overrides: SUpost */
 .navbar {
 
 	.navbar-collapse {
@@ -35,4 +40,39 @@ $su-blue: #083472;
 
 .card {
 	border-radius: 0px;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus {
+	box-shadow: none;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:focus {
+	background-color: $su-blue;
+	border-color: $su-blue;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active {
+	background-color: $su-blue;
+	border-color: $su-blue;
+}
+
+.btn-primary:focus {
+	box-shadow: none;
+}
+
+.btn:focus {
+	outline: none;
+}
+
+.jumbotron {
+	background-color: #cce3fb;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

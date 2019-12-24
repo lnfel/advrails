@@ -1,10 +1,10 @@
 @import "bootstrap";
 
-$bg-su-blue: #083472;
+$su-blue: #083472;
 .navbar {
 
 	.navbar-collapse {
-		background-color: $bg-su-blue;
+		background-color: $su-blue;
 		padding: 5px;
 		border-radius: 10px 10px 0px 0px;
 	}
@@ -22,9 +22,17 @@ $bg-su-blue: #083472;
 
 	.navbar-toggler-icon {
 		background: image-url('../../assets/images/menu.svg') center;
-		background-color: $bg-su-blue;
+		background-color: $su-blue;
 		width: 2em;
 		height: 2em;
 		border-radius: 5px;
 	}
+}
+
+.bg-su-blue {
+	background-color: $su-blue;
+}
+
+.card {
+	border-radius: 0px;
 }

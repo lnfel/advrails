@@ -3,7 +3,39 @@
 
 <div class="container-fluid">
 	<div class="row">
-		<aside class="col-2 bg-primary">sidebar</aside>
+		<aside class="col-2 bg-su-blue">
+			<div class="accordion" id="asideNav">
+				<div class="card">
+					<div class="card-header" id="asideNavOne">
+						<h2 class="mb-0">
+							<a class="nav-link p-0" type="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								Overview
+							</a>
+						</h2>
+					</div>
+					<div class="collapse show" id="collapseOne" aria-labelledby="asideNavOne" data-parent="#asideNav">
+						<div class="card-body">
+							List of items
+						</div>
+					</div>
+				</div>
+				<!--  -->
+				<div class="card">
+					<div class="card-header" id="asideNavTwo">
+						<h2 class="mb-0">
+							<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								Category
+							</button>
+						</h2>
+					</div>
+					<div class="collapse" id="collapseTwo" aria-labelledby="asideNavTwo" data-parent="#asideNav">
+						<div class="card-body">
+							List of items
+						</div>
+					</div>
+				</div>
+			</div>
+		</aside>
 		<main class="col-10 bg-info">
 			<div class="row">
 				<div class="col">main content column 1</div>

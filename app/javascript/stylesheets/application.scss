@@ -76,3 +76,8 @@ $su-blue: #083472;
   -ms-user-select: none;
   user-select: none;
 }
+
+.container-signup {
+	min-height: calc(100vh - 96px);
+	padding-bottom: 5em;
+}

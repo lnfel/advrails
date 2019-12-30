@@ -1,0 +1,67 @@
+<% provide(:title, 'Sign up') %>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6 py-2 px-3">
+			<%= link_to image_tag("logo.png", :height => "80px"), root_path, :class => "" %>
+			<div class="container-signup d-flex align-items-center justify-content-center">
+				<div class="">
+					<h2 class="pb-4">Sign up</h2>
+					<p class="pb-4">Get quick access to Stanford's Marketplace today.</p>
+					<form>
+						<div class="form-row align-items-center">
+							<div class="col">
+								<label class="sr-only" for="firstname">First Name</label>
+								<div class="input-group mb-2">
+									<input type="text" class="form-control" id="firstname" placeholder="First Name">
+								</div>
+							</div>
+							<div class="col">
+								<label class="sr-only" for="surname">Surname</label>
+								<div class="input-group mb-2">
+									<input type="text" class="form-control" id="surname" placeholder="Surname">
+								</div>
+							</div>
+						</div>
+						<!--  -->
+						<div class="form-row align-items-center">
+							<div class="col">
+								<label class="sr-only" for="email">Username</label>
+							  <div class="input-group mb-2">
+							    <input type="text" class="form-control" id="email" placeholder="Stanford Email">
+							    <div class="input-group-append">
+							      <div class="input-group-text">@stanford.edu</div>
+							    </div>
+							  </div>
+							</div>
+						</div>
+						<!--  -->
+						<div class="form-row align-items-center pb-4">
+							<div class="col">
+								<label class="sr-only" for="password">Password</label>
+								<div class="input-group mb-2">
+									<input type="password" class="form-control" id="password" placeholder="Password">
+								</div>
+								<span class="text-muted font-weight-lighter">Use 6 or more characters with a mix of letters, numbers & symbols</span>
+							</div>
+						</div>
+						<!--  -->
+						<div class="form-check form-check-inline pb-4">
+						  <input class="form-check-input" type="checkbox" id="chkterms" value="1">
+						  <label class="form-check-label" for="chkterms">I accept the <%= link_to "Terms of Service", terms_path %></label>
+						</div>
+						<!--  -->
+						<div class="form-row align-items-center">
+							<div class="col">
+								<button type="submit" class="btn btn-primary btn-block">Create my account</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 bg-su-blue">
+			
+		</div>
+	</div>
+</div>

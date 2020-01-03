@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {
+    confirmations: 'confirmations'
+  }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'site#index'
   get '/about', to: 'site#about'
@@ -6,7 +9,12 @@ Rails.application.routes.draw do
   get '/contact', to: 'site#contact'
   get '/terms', to: 'site#terms'
 
+  # Users
   get '/signup', to: 'users#new'
+
+  # Dashboard
+  resources :dashboard, only: [:index]
+  #get '/dashboard', to: 'dashboard#index'
   
   get '/check.txt', to: proc {[200, {}, ['it_works']]}
 end

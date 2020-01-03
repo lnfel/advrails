@@ -30,6 +30,8 @@ gem 'bootsnap', '1.4.5', require: false
 gem 'bootstrap', '4.4.1'
 # JQuery
 gem 'jquery-rails', '4.3.5'
+# Devise
+gem 'devise', '4.7.1'
 
 group :development, :test do
 	# Use sqlite3 as the database for Active Record

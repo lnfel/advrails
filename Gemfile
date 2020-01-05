@@ -29,7 +29,7 @@ gem 'bootstrap', '4.4.1'
 # JQuery
 gem 'jquery-rails', '4.3.5'
 # Devise
-gem 'devise', '4.7.1'
+#gem 'devise', '4.7.1'
 
 group :development, :test do
 	# Use sqlite3 as the database for Active Record
@@ -37,7 +37,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Mailcatcher
-  gem 'mailcatcher'
+  #gem 'mailcatcher'
 end
 
 group :development do

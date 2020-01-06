@@ -26,6 +26,8 @@ gem 'jbuilder', '2.9.1'
 gem 'bootsnap', '1.4.5', require: false
 # Bootstrap
 gem 'bootstrap', '4.4.1'
+# Font-awesome
+gem 'font-awesome-sass', '5.12'
 # JQuery
 gem 'jquery-rails', '4.3.5'
 # Devise

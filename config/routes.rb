@@ -10,19 +10,8 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
 
   # Dashboard
-  resources :dashboard, only: [:index]
+  #resources :dashboard, only: [:index]
   #get '/dashboard', to: 'dashboard#index'
-
-  devise_for :users, controllers: {
-    confirmations: 'confirmations',
-    sessions: 'users/sessions',
-    registrations: 'users/registrations'
-  }
-
-  devise_scope :user do
-    get '/sign_in', to: 'users/sessions#new'
-    get '/register', to: 'users/registrations#new'
-  end
   
   get '/check.txt', to: proc {[200, {}, ['it_works']]}
 end

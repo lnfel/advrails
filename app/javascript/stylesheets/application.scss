@@ -162,9 +162,10 @@ p {
 
 .dk-footer {
   padding: 75px 0 0;
-  background-color: #151414;
+  background-color: gray;
   position: relative;
-  z-index: 2; }
+  z-index: 2; 
+  color: black;}
   .dk-footer .contact-us {
     margin-top: 0;
     margin-bottom: 30px;
@@ -182,9 +183,10 @@ p {
 .dk-footer-box-info {
   position: absolute;
   top: -122px;
-  background: #202020;
+  background: #92c5e8;
   padding: 40px;
-  z-index: 2; }
+  z-index: 2;
+  border-radius: 10px 10px 0px 0px; }
   .dk-footer-box-info .footer-social-link h3 {
     color: #fff;
     font-size: 24px;

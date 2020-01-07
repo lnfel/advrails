@@ -1,31 +1,4 @@
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-<!-- <ul class="nav flex-column">
-  <li class="nav-item">
-    <%#= link_to "Home", root_path, class: "nav-link active" %>
-  </li>
-  <li class="nav-item">
-    <%#= link_to "About", about_path, class: "nav-link" %>
-  </li>
-  <li class="nav-item">
-    <%#= link_to "Help", help_path, class: "nav-link" %>
-  </li>
-  <li class="nav-item">
-    <%#= link_to "Contact", contact_path, class: "nav-link" %>
-  </li>
-  <li class="nav-item">
-    <%#= link_to "Terms", terms_path, class: "nav-link" %>
-  </li>
-  <li class="nav-item bg-gray">
-    <a class="nav-link text-muted" href="#">Register</a>
-  </li>
-  <li class="nav-item bg-gray">
-    <a class="nav-link text-muted" href="#">Login</a>
-  </li>
-  <li class="nav-item bg-gray">
-    <a class="nav-link disabled text-muted" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-  </li>
-</ul> -->
-
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous"> -->
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark d-flex align-items-stretch">
     <!-- <a class="navbar-brand" href="#">Navbar</a> -->
@@ -81,20 +54,16 @@
 </header>
 
 <div class="container">
-<form class="card card-sm">
-<div class="card-body row no-gutters align-items-center">
-    <div class="col-auto">
-        <i class="glyphicon glyphicon-search h4 text-body"></i>
+  <form class="">
+    <div class="form-row">
+      <div class="col">
+        <div class="input-group mb-2">
+          <input class="form-control" type="search" name="search" placeholder="Search something...">
+          <div class="input-group-append">
+            <button class="btn btn-success">Search</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <!--end of col-->
-    <div class="col">
-        <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search topics or keywords">
-    </div>
-    <!--end of col-->
-    <div class="col-auto">
-        <button class="btn btn-lg btn-success" type="submit">Search</button>
-    </div>
-    <!--end of col-->
-</div>
-</form>
+  </form>
 </div>

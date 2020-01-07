@@ -15,7 +15,10 @@ import "bootstrap";
 import "../stylesheets/application";
 import "../stylesheets/custom";
 import "./custom";
-import "@fortawesome/fontawesome-free/js/all";
+// Heroku error:
+// ModuleNotFoundError: Module not found: Error: Can't resolve '@fortawesome/fontawesome-free/js/all' in '/tmp/build_23d82e6debf26a05e59da0fc0d46a4ff/app/javascript/packs'
+// Decided to use app/assets/stylesheets/application.scss to import font-awesome
+//import "@fortawesome/fontawesome-free/js/all";
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

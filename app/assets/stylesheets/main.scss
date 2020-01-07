@@ -2,8 +2,11 @@
 /* Import bootstrap */
 /********************/
 
+/* For Bootstrap: look into app/javascript/packs and stylesheets folder */
 /*@import "bootstrap-sprockets";*/
-@import "bootstrap";
+/*@import "bootstrap";*/
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 /*******************/
 /* Color Variables */

@@ -14,6 +14,7 @@ require("channels")
 import "bootstrap";
 import "../stylesheets/application";
 import "../stylesheets/custom";
+import "../stylesheets/highschool-usa-sans/highschool-usa-sans";
 import "./custom";
 // Heroku error:
 // ModuleNotFoundError: Module not found: Error: Can't resolve '@fortawesome/fontawesome-free/js/all' in '/tmp/build_23d82e6debf26a05e59da0fc0d46a4ff/app/javascript/packs'

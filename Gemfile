@@ -32,6 +32,8 @@ gem 'font-awesome-sass', '5.12'
 gem 'jquery-rails', '4.3.5'
 # Devise
 #gem 'devise', '4.7.1'
+# Active Storage
+gem 'mini_magick', '4.5'
 
 group :development, :test do
 	# Use sqlite3 as the database for Active Record

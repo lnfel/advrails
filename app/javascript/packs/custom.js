@@ -5,6 +5,14 @@ $(function() {
   // Initialize toast notifications / alerts
   $('.toast').toast({ delay: 2000 });
   $('.toast').toast('show');
+
+  // Validate fileUpload
+  $("input[type = 'submit']").click(function(){
+  	var $fileUpload = $("input[type='file']");
+  	if (parseInt($fileUpload.get(0).files.length) > 4){
+      alert("You are only allowed to upload a maximum of 4 files");
+  	}
+	});
 });
 
 $(function() {

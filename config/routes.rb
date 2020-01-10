@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   # Dashboard
   #resources :dashboard, only: [:index]
   #get '/dashboard', to: 'dashboard#index'
+
+  # Post
+  resources :posts
+  #get '/post', to: 'post#index'
   
   get '/check.txt', to: proc {[200, {}, ['it_works']]}
 end

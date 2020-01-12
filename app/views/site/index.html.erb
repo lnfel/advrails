@@ -3,27 +3,63 @@
 
 <div class="container-fluid pb-4">
 	<div class="row">
-		<aside class="col-2 d-none d-md-block p-md-0 px-lg-3">
+		<aside class="col-2 col-md-2 p-md-0 px-lg-3">
 			<div class="accordion" id="asideNav">
 				<div class="card">
-					<div class="card-header bg-su-blue" id="asideNavOne">
+					<div class="card-header bg-su-blue p-0" id="asideNavOne">
 						<h2 class="mb-0">
-							<button class="btn btn-block btn-primary" type="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-								Overview
+							<button class="btn btn-block btn-primary text-left" type="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								<i class="fas fa-list-ul"></i><span class="d-none d-md-inline"> Overview</span>
 							</button>
 						</h2>
 					</div>
 					<div class="collapse show" id="collapseOne" aria-labelledby="asideNavOne" data-parent="#asideNav">
-						<div class="card-body">
-							List of items
+						<div class="card-body p-0">
+							<ul class="nav flex-column">
+								<li class="nav-item border-bottom">
+									<a class="nav-link" href="#">
+										<i class="fas fa-home"></i><span class="d-none d-md-inline"> Housing</span>
+									</a>
+								</li>
+								<li class="nav-item border-bottom">
+									<a class="nav-link" href="#">
+										<i class="fas fa-dollar-sign"></i><span class="d-none d-md-inline"> For Sale</span>
+									</a>
+								</li>
+								<li class="nav-item border-bottom">
+									<a class="nav-link" href="#">
+										<i class="fas fa-user-check"></i><span class="d-none d-md-inline"> Jobs</span>
+									</a>
+								</li>
+								<li class="nav-item border-bottom">
+									<a class="nav-link" href="#">
+										<i class="fas fa-hand-holding-heart"></i><span class="d-none d-md-inline"> Personals</span>
+									</a>
+								</li>
+								<li class="nav-item border-bottom">
+									<a class="nav-link" href="#">
+										<i class="fas fa-handshake"></i><span class="d-none d-md-inline"> Campus Job</span>
+									</a>
+								</li>
+								<li class="nav-item border-bottom">
+									<a class="nav-link" href="#">
+										<i class="fas fa-users"></i><span class="d-none d-md-inline"> Community</span>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">
+										<i class="fas fa-user-friends"></i><span class="d-none d-md-inline"> Services</span>
+									</a>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
 				<!--  -->
 				<div class="card">
-					<div class="card-header bg-su-blue" id="asideNavTwo">
+					<div class="card-header bg-su-blue p-0" id="asideNavTwo">
 						<h2 class="mb-0">
-							<button class="btn btn-block btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							<button class="btn btn-block btn-primary text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 								Category
 							</button>
 						</h2>
@@ -36,7 +72,7 @@
 				</div>
 			</div>
 		</aside>
-		<main class="col-md-10 p-md-0 px-lg-3">
+		<main class="col-10 col-md-10 p-md-0 px-lg-3">
 			<div class="row">
 				<!-- Main 1 start -->
 				<div class="col-lg-6">

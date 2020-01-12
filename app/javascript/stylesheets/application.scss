@@ -90,6 +90,19 @@ $su-blue: #083472;
   font-family: 'Squada One';
 }
 
+.accordion.position-absolute {
+  top: 0;
+  left: 15px;
+  width: calc(100% - 30px);
+  height: 100%;
+}
+
+.accordion .sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 15px;
+}
+
 /* Footer */
 
 .footer-card {

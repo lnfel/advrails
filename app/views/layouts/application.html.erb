@@ -22,6 +22,11 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
       </script>
     <![endif]-->
+    
+    <%= favicon_link_tag("icon/apple-touch-icon.png", rel: "apple-touch-icon", sizes: "180x180") %>
+    <%= favicon_link_tag("icon/favicon-32x32.png", rel: "icon", type: "image/x-icon", sizes: "32x32") %>
+    <%= favicon_link_tag("icon/favicon-16x16.png", rel: "icon", type: "image/x-icon", sizes: "16x16") %>
+    <%= favicon_link_tag("icon/site.webmanifest", rel: "manifest") %>
   </head>
 
   <body aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">

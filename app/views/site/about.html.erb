@@ -1,2 +1,25 @@
 <% provide(:title, "About") %>
-<h1><%= yield(:title) %></h1>
+
+<section class="container-fluid bg-3 text-center mb-5 mt-5">
+  <div class="row">
+    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+    <div>
+      <%= image_tag("greg.png", class: "img-fluid img") %>
+      </div>
+    </div>
+    <div class="col-12 col-md-8">
+      <div class="p-4 pl-md-0">
+        <h1 class="">About SUPost</h1>
+        <p class="text-justify"> Welcome to SUpost. I built SUpost to enable Stanford students and staff to buy and sell their stuff. 
+      SUpost requires an @stanford.edu email in order to post. So, you can be sure that all items posted on SUpost are from people affiliated with Stanford. 
+      (The only exception to this email restriction is in the off-campus jobs section, in which anyone can post a job for a fee -- to help us cover the costs of operation.)
+      
+        <p class="text-justify">SUpost is the #1 marketplace at Stanford! SUpost gets over 1,000,000 page views per month from Stanford students, alumni, staff and faculty. 
+      Need to find housing? Check out the SUpost housing listings. Got something to sell? Post it! Looking to sublet your apartment? Post it! Need a bike for your ride to class through campus? Post it! Post it! 
+      Tell everyone you know at Stanford to post one item they want to sell on SUpost, and watch this site continue to be an incredibly useful resource at Stanford. </p>
+        </p>
+        <p class="text-justify">Greg Wientjes</p>
+      </div>
+    </div>
+  </div>
+</section>

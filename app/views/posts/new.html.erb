@@ -3,10 +3,11 @@
 <div class="container py-4 mb-4">
 	<h1><i class="fas fa-pencil-alt"></i> New post</h1>
 	<span>Please fill-in appropriate fields for your post.</span>
-	<form>
+	<%= form_with(model: @post, local: true) do |f| %>
 		<div class="form-row pt-4">
 			<div class="col">
-				<select class="form-control">
+				<%= f.collection_select(:type_id, Type.all, :id, :name, {:include_blank => 'Type of post'}, class: "form-control", title: "Type of post") %>
+				<!-- <select class="form-control">
 					<option value="" disabled selected hidden>Type of post</option>
 					<optgroup label="Type of post">
 						<option>For sale</option>
@@ -18,7 +19,7 @@
 						<option>Campus job</option>
 						<option>Job off-campus</option>
 					</optgroup>
-				</select>
+				</select> -->
 			</div>
 			<!--  -->
 			<div class="col">
@@ -84,5 +85,5 @@
 			<input type="submit" name="" class="btn btn-success mr-2" value="Preview">
 			<input type="submit" name="" class="btn btn-success" value="Post">
 		</div>
-	</form>
+	<% end %>
 </div>

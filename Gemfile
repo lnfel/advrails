@@ -33,6 +33,7 @@ gem 'jquery-rails', '4.3.5'
 # Devise
 #gem 'devise', '4.7.1'
 # Active Storage
+# Don't use mini_magick 4.5 due to high severity issue
 gem 'mini_magick', '4.9.4'
 
 group :development, :test do

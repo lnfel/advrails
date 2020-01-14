@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+type_list = [
+	"For sale",
+	"Personals",
+	"Housing (offering)",
+	"Housing (need)",
+	"Community",
+	"Service offered",
+	"Campus job",
+	"Job off-campus"
+]
+
+type_list.each do | name |
+	Type.create( name: name )
+end

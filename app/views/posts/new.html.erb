@@ -23,9 +23,10 @@
 			</div>
 			<!--  -->
 			<div class="col">
-				<select class="form-control" disabled="">
+				<%= f.collection_select(:category_id, Category.all, :id, :name, {:include_blank => 'Category'}, class: "form-control", title: "Category") %>
+				<!-- <select class="form-control" disabled="">
 					<option value="" disabled selected hidden>Category</option>
-				</select>	
+				</select>	 -->
 			</div>
 		</div>
 		<!--  -->

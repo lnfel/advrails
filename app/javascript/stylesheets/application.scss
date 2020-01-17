@@ -196,3 +196,40 @@ footer .line.three::after {
     text-align: center;
     background: rgba(0,0,0,0.4);
 }
+
+.breadcrumb{
+    background-color: #cce3fb;
+    
+}
+
+.rounded-circle { 
+    border-radius: 50% !important;
+    
+}
+
+h2 {
+    color: #5a5a5a;
+    
+}
+
+/* Social link item */
+
+.list-inline-item {
+    display: inline-block;
+    
+}
+
+.social-link {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+    
+}
+

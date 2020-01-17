@@ -77,8 +77,8 @@
 		<div class="form-row pt-4">
 			<div class="col">
 				<%= f.label :feature_images, class: 'label' %>
-				<div class="dropzone dropzone-default dz-clickable" data-controller="dropzone" data-dropzone-max-file-size="2" data-dropzone-max-files="1">
-					<%= f.file_field :feature_images, direct_upload: true, multiple: true, data: { target: 'dropzone.input' } %>
+				<div class="dropzone dropzone-default dz-clickable rounded" data-controller="dropzone" data-dropzone-max-file-size="2" data-dropzone-max-files="4">
+					<%= f.file_field :feature_images, class: 'border rounded', direct_upload: true, multiple: true, data: { target: 'dropzone.input' } %>
 					<div class="dropzone-msg dz-message needsclick text-gray-600">
 			      <h3 class="dropzone-msg-title">Drag here to upload or click here to browse</h3>
 			      <span class="dropzone-msg-desc text-sm">You can upload up to 4 image files. 2 MB file size maximum. Allowed file types png, jpg.</span>

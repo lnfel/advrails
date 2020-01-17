@@ -14,6 +14,7 @@ require("channels")
 import "bootstrap";
 import "../stylesheets/application";
 import "../stylesheets/custom";
+import "../stylesheets/components/_form.scss";
 import "../stylesheets/highschool-usa-sans/highschool-usa-sans";
 import "./custom";
 // Heroku error:

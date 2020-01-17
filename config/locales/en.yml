@@ -31,3 +31,12 @@
 
 en:
   hello: "Hello world"
+
+#en:
+#  activerecord:
+#    errors:
+#      models:
+#        post:
+#          attributes:
+#            type_id:
+#              blank: "Please select a type for your post."

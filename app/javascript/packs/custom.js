@@ -3,7 +3,7 @@
 $(function() {
   $('[data-toggle="tooltip"]').tooltip();
   // Initialize toast notifications / alerts
-  $('.toast').toast({ delay: 2000 });
+  $('.toast').toast({ delay: 2000, autohide: false });
   $('.toast').toast('show');
 
   // Validate fileUpload

@@ -3,7 +3,7 @@
 <div class="container py-4 mb-4">
 	<h1><i class="fas fa-pencil-alt"></i> New post</h1>
 	<span>Please fill-in appropriate fields for your post.</span>
-	<%= form_with(model: @post, local: true) do |f| %>
+	<%= form_with(model: @post, local: true, multipart: true) do |f| %>
 		<div class="form-row pt-4">
 			<div class="col">
 				<%= f.collection_select(:type_id, Type.all, :id, :name, {:include_blank => 'Type of post'}, class: "form-control", title: "Type of post") %>
@@ -61,9 +61,9 @@
 					<!-- <input type="email" name="" class="form-control" placeholder="Your stanford email"> -->
 					<div class="input-group-append">
 						<select name="email_domain" class="form-control">
-							<option class="selected">@stanford.edu</option>
-							<option>@alumni.stanford.edu</option>
-							<option>@stanfordalumni.org</option>
+							<option class="selected" value="@stanford.edu">@stanford.edu</option>
+							<option value="@alumni.stanford.edu">@alumni.stanford.edu</option>
+							<option value="@stanfordalumni.org">@stanfordalumni.org</option>
 						</select>
 					</div>
 				</div>
@@ -77,8 +77,9 @@
 		<div class="form-row pt-4">
 			<div class="col">
 				<div class="custom-file">
-				  <input type="file" class="custom-file-input" id="customFile" multiple>
-				  <label class="custom-file-label" for="customFile" data-browse="Choose File(s)">Photo(s)</label>
+					<%= f.file_field :feature_images, class: 'custom-file-input', multiple: true %>
+				  <!-- <input type="file" class="custom-file-input" id="customFile" multiple> -->
+				  <label class="custom-file-label" for="post_feature_images" data-browse="Choose File(s)">Photo(s)</label>
 				</div>
 				<small class="text-muted">
 					You can upload up to 4 image files.

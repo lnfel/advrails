@@ -76,14 +76,22 @@
 		<!--  -->
 		<div class="form-row pt-4">
 			<div class="col">
-				<div class="custom-file">
-					<%= f.file_field :feature_images, class: 'custom-file-input', multiple: true %>
-				  <!-- <input type="file" class="custom-file-input" id="customFile" multiple> -->
-				  <label class="custom-file-label" for="post_feature_images" data-browse="Choose File(s)">Photo(s)</label>
+				<%= f.label :feature_images, class: 'label' %>
+				<div class="dropzone dropzone-default dz-clickable" data-controller="dropzone" data-dropzone-max-file-size="2" data-dropzone-max-files="1">
+					<%= f.file_field :feature_images, direct_upload: true, multiple: true, data: { target: 'dropzone.input' } %>
+					<div class="dropzone-msg dz-message needsclick text-gray-600">
+			      <h3 class="dropzone-msg-title">Drag here to upload or click here to browse</h3>
+			      <span class="dropzone-msg-desc text-sm">You can upload up to 4 image files. 2 MB file size maximum. Allowed file types png, jpg.</span>
+			     </div>
 				</div>
-				<small class="text-muted">
+				<!-- <div class="custom-file"> -->
+					<%#= f.file_field :feature_images, class: 'custom-file-input', multiple: true %>
+				  <!-- <input type="file" class="custom-file-input" id="customFile" multiple> -->
+				  <!-- <label class="custom-file-label" for="post_feature_images" data-browse="Choose File(s)">Photo(s)</label> -->
+				<!-- </div> -->
+				<!-- <small class="text-muted">
 					You can upload up to 4 image files.
-				</small>
+				</small> -->
 			</div>
 		</div>
 		<!--  -->

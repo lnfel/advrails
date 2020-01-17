@@ -14,6 +14,7 @@ require("channels")
 import "bootstrap";
 import "../stylesheets/application";
 import "../stylesheets/custom";
+import "../stylesheets/components/_form.scss";
 import "../stylesheets/highschool-usa-sans/highschool-usa-sans";
 import "./custom";
 // Heroku error:
@@ -27,3 +28,5 @@ import "./custom";
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+import "controllers"

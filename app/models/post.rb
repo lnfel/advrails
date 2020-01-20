@@ -6,6 +6,10 @@ class Post < ApplicationRecord
 
   validates :type_id, presence: true
   validates :category_id, presence: true
+  validates :title, presence: true
+  validates :price, numericality: { message: " can't be empty." }
   validates :description, presence: true
-  validates :price, format: { with: /\A[+-]?\d+\z/, message: "accepts integer only." }
+  validates :email, presence: true
+  #validates :price, format: { with: /\A[+-]?\d+\z/, message: "accepts integer only." }
+
 end

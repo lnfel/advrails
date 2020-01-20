@@ -49,6 +49,26 @@ $(function() {
     });
   });
   // end #post_type_id
+
+  // prevent special characters on number input
+
+  // 48-57 - (0-9)Numbers
+  // 65-90 - (A-Z)
+  // 97-122 - (a-z)
+  // 8 - (backspace)
+  // 32 - (space)
+  $("#post_price").keypress(function(e) {
+    var keyCode = e.which;
+
+    if ( !( (keyCode >= 48 && keyCode <= 57) 
+      ||(keyCode >= 65 && keyCode <= 90) 
+      || (keyCode >= 97 && keyCode <= 122) ) 
+      && keyCode != 8 && keyCode != 32) {
+      console.log("key prevented");
+      e.preventDefault();
+    }
+  });
+  // end #post_price
 });
 
 $(function() {

@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+	before_action :set_post, only: [:show, :edit, :update, :destroy]
+
 	def index
 		@posts = Post.all
 	end
@@ -30,6 +32,7 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
+		@post.feature_images.attach(params[:post][:feature_images])
 
 		respond_to do | format |
 			if @post.save
@@ -47,6 +50,10 @@ class PostsController < ApplicationController
 	end
 
 	private
+
+		def set_post
+      @post = Post.find(params[:id])
+    end
 
 		def post_params
 			params.require(:post).permit(:type_id, :category_id, :title, :price, :description, :email, :feature_images)

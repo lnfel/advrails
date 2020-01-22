@@ -1,24 +1,31 @@
-<%= link_to @post do %>
+<%#= link_to @post do %>
 	<%#= @post.feature_images.each do |i| %>
-  	<%= image_tag @post.feature_images[0] if @post.feature_images[0].present? %>
-  	<%= image_tag @post.feature_images[1] if @post.feature_images[1].present? %>
-  	<%= image_tag @post.feature_images[2] if @post.feature_images[2].present? %>
-  	<%= image_tag @post.feature_images[3] if @post.feature_images[3].present? %>
+  	<%#= image_tag @post.feature_images[0] if @post.feature_images[0].present? %>
+  	<%#= image_tag @post.feature_images[1] if @post.feature_images[1].present? %>
+  	<%#= image_tag @post.feature_images[2] if @post.feature_images[2].present? %>
+  	<%#= image_tag @post.feature_images[3] if @post.feature_images[3].present? %>
   <%# end %>
   <%#= @post.feature_images.each { |e| puts e } %>
-  <% @post.feature_images.each do |image| %>
-  	<%= image_tag image %>
-  <% end %>
-<% end %>
+<%# end %>
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item"><a href="#">Library</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Data</li>
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><%= link_to "Posts", posts_path %></li>
+    <li class="breadcrumb-item"><a href="#"><%= Type.find_by(id: @post.type_id).name %></a></li>
+    <li class="breadcrumb-item active" aria-current="page"><%= Category.find_by(id: @post.category_id).name %></li>
   </ol>
 </nav>
 
-<section class="container">
-
+<section class="container py-4 mb-4">
+  <%= content_tag(:h3, @post.title) %>
+  <%= content_tag(:span, number_to_currency(@post.price, precision: 2, strip_insignificant_zeros: true), class: 'lead font-weight-bold text-success') %>
+  <div class="row">
+    <% @post.feature_images.each do |image| %>
+      <!-- <div class="col-12 col-md-6 d-flex justify-content-center"> -->
+        <%= image_tag image, class: 'mx-auto d-block d-md-inline mb-2 img-thumbnail img-fluid' %>
+      <!-- </div> -->
+    <% end %>
+  </div>
+  <%= content_tag(:pre, @post.description, class: 'text-break') %>
 </section>

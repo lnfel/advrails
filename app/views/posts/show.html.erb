@@ -27,5 +27,10 @@
       <!-- </div> -->
     <% end %>
   </div>
-  <%= content_tag(:pre, @post.description, class: 'text-break') %>
+  <%#= content_tag(:pre, @post.description, class: 'text-break') %>
+  <!-- markdown helper: look in app/helpers/application_helper.rb -->
+  <%= markdown.render(@post.description).html_safe %>
+
+  <!-- use markdown without helper method -->
+  <%#= Markdown.new(@post.description, :hard_wrap).to_html.html_safe %>
 </section>

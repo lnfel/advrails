@@ -46,19 +46,21 @@
 	<h1><i class="fas fa-newspaper"></i> Posts</h1>
 	<ul class="list-unstyled">
 		<% @posts.each do |p| %>
-			<li class="media border-bottom d-block d-md-flex py-2">
+			<li class="media align-items-center border-bottom d-block d-md-flex py-2">
 		    <%#= image_tag(p.feature_images[0], class: 'mr-3') if p.feature_images[0].present? %>
-
-		    <% if p.feature_images[0].present? %>
-		    	<%= image_tag(p.feature_images[0], class: 'align-self-center mx-auto d-block mr-md-3 img-fluid') %>
-				<% else %>		    
-					<svg class="bd-placeholder-img mr-3" width="112" height="112" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 64x64"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">No Image</text></svg>
-		    <% end %>
+		    <div class="d-flex justify-content-center mx-auto mr-md-3" style="width: 340px;">
+			    <% if p.feature_images[0].present? %>
+			    	<%= image_tag(p.feature_images[0], class: 'align-self-center d-block', height: '191px') %>
+					<% else %>
+						<svg class="bd-placeholder-img mr-3" width="112" height="112" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 64x64"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">No Image</text></svg>
+			    <% end %>
+		    </div>
 
 		    <div class="media-body py-2">
 		      <!-- <h5 class="h5 text-decoration-none mt-0 mb-1"><%#= p.title %></h5> -->
 		      <%= link_to p.title, post_path(p.id), class: 'h5 text-decoration-none mt-0 mb-1' %>
-		      <%= content_tag(:p, p.description.truncate(200, omission: ' ...')) %>
+		      <%#= content_tag(:p, p.description.truncate(200, omission: ' ...')) %>
+		      <%= markdown.render(p.description.truncate(200, omission: ' ...')).html_safe %>
 		      <%= link_to Type.find_by(id: p.type_id).name, "#", class: 'badge badge-primary' %>
 		      <%= link_to Category.find_by(id: p.category_id).name, "#", class: 'badge badge-primary' %>
 		    </div>

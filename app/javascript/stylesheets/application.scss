@@ -204,6 +204,8 @@ footer .line.three::after {
 
 .rounded-circle { 
     border-radius: 50% !important;
+    width: 140px;
+    height: 140px;
     
 }
 
@@ -233,3 +235,6 @@ h2 {
     
 }
 
+#contact .card:hover i,#contact .card:hover h4{
+	color: #87d37c;
+}

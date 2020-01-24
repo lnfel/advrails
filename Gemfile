@@ -36,6 +36,9 @@ gem 'jquery-rails', '4.3.5'
 # Don't use mini_magick 4.5 due to high severity issue
 gem 'mini_magick', '4.9.4'
 
+# Text Markdown
+gem 'redcarpet', '3.5.0'
+
 group :development, :test do
 	# Use sqlite3 as the database for Active Record
 	gem 'sqlite3', '1.4.1'

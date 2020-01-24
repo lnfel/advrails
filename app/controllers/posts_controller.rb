@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+	#rescue_from ActiveRecord::RecordNotFound, with: :show_errors
 	before_action :set_post, only: [:show, :edit, :update, :destroy]
 
 	def index
@@ -53,7 +54,12 @@ class PostsController < ApplicationController
 	private
 
 		def set_post
-      @post = Post.find(params[:id])
+      @post = Post.find_by!(id: params[:id])
+
+      # https://stackoverflow.com/questions/2336593/rescue-from-activerecordrecordnotfound-in-rails
+      rescue ActiveRecord::RecordNotFound
+      	flash[:notice] = "Try searching again or use the category list."
+  			redirect_to :action => 'index'
     end
 
 		def post_params

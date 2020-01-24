@@ -4,12 +4,13 @@
     <!-- <a class="navbar-brand" href="#">Navbar</a> -->
     <%= link_to image_tag("su-light.png", :height => "80px"), root_path, :class => "navbar-brand p-0" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <!-- <span class="navbar-toggler-icon"></span> -->
+      <i class="fas fa-bars fa-2x"></i>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div class="mr-auto"></div>
-      <ul class="navbar-nav">
+      <ul class="navbar-nav align-items-center">
         <li class="nav-item active">
           <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
           <%= link_to "Home", root_path, class: "nav-link" %>
@@ -30,7 +31,7 @@
           <!-- <a class="nav-link" href="#">Link</a> -->
           <%= link_to "Terms", terms_path, class: "nav-link" %>
         </li>
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Dropdown
           </a>
@@ -40,9 +41,12 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link btn btn-success btn-sm font-weight-bolder mr-2 ml-2 mb-2" href="#" tabindex="-1" aria-disabled="true">POST</a>
+        </li> -->
+        <li class="mr-lg-3">
+          <!-- <a class="btn btn-success mr-3 ml-3" href="#">POST</a> -->
+          <% unless current_page?(new_post_path) %>
+            <%= link_to("POST", new_post_path, class: 'btn btn-success ml-lg-3') %>
+          <% end %>
         </li>
       </ul>
       <!-- <form class="form-inline my-2 my-lg-0">
@@ -53,3 +57,19 @@
   </nav>
 </header>
 
+<!-- https://medium.com/@cromano31415/unlock-http-info-in-rails-with-rack-request-env-and-uri-c7835397dc14 -->
+<%#= request.env %>
+<%#= @uri = URI(request.env['REQUEST_URI']) %>
+<%#= URI(request.env['REQUEST_URI']) %>
+
+<!-- http://blogofchirag.blogspot.com/2008/09/variables-in-request-env-ruby-on-rails.html -->
+<!-- <table>
+<th>key</th>
+<th>Value</th>
+<%# for item in request.env %>
+<tr>
+<td><%#= item[0] %></td>
+<td><%#= item[1] %></td>
+</tr>
+<%# end %>
+</table> -->

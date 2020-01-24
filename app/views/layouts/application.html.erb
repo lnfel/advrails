@@ -46,6 +46,9 @@
     
    
     <%= render 'layouts/header' %>
+    <% unless current_page?(new_post_path) %>
+      <%= render 'layouts/search' %>
+    <% end %>
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>

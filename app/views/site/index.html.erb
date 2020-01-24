@@ -1,8 +1,6 @@
 <% provide(:title, "Home") %>
 <h1><%#= yield(:title) %></h1>
 
-<%= render 'layouts/search' %>
-
 <div class="container-fluid pb-4">
 	<div class="row">
 		<aside class="col-2 col-md-2 position-relative p-md-0 px-lg-3">
@@ -12,13 +10,20 @@
 					<div class="card-header bg-su-blue p-0" id="asideNavOne">
 						<h2 class="mb-0">
 							<button class="btn btn-block btn-primary text-center text-xl-left" type="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-								<i class="fas fa-list-ul"></i><span class="d-none d-xl-inline"> Overview</span>
+								<i class="fas fa-bars"></i><span class="d-none d-xl-inline"> Overview</span>
 							</button>
 						</h2>
 					</div>
 					<div class="collapse show" id="collapseOne" aria-labelledby="asideNavOne" data-parent="#asideNav">
 						<div class="card-body p-0">
 							<ul class="nav flex-column">
+								<li class="nav-item border-bottom">
+									<a class="nav-link text-center text-xl-left" href="#">
+										<i class="fas fa-list-ul"></i>
+										<span class="d-none d-xl-inline"> Recent Posts </span>
+										<span class="badge badge-danger rounded-0 d-none d-md-inline">10</span>
+									</a>
+								</li>
 								<li class="nav-item border-bottom">
 									<a class="nav-link text-center text-xl-left" href="#">
 										<i class="fas fa-home"></i>
@@ -89,34 +94,39 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
               </ol>
               <!-- carousel indicators end -->
               <!-- carousel inner -->
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <%= image_tag("slider7.jpg", class: "d-block w-100 img-fluid banner", alt: "First slide") %>
-                  <div class="carousel-content">
+                  <%#= image_tag("slider7.jpg", class: "d-block w-100 img-fluid banner", alt: "First slide") %>
+                  <div id="slider7" class="d-block" style="height: 380px;"></div>
+                  <div class="carousel-caption">
                     <h1 class="display-6">Welcome to <span class="su-text">SU<span class="squada">Post</span></span>!</h1>
-					  				<p class="lead text-justify mr-4" style="background: rgba(78, 84, 79, 0.5);">SUpost is a marketplace where Stanford students and staff buy and sell their stuff. Posting requires an @stanford.edu email so, you can be sure that all items posted on SUpost are from people affiliated with Stanford.</p>
+					  				<!-- <p class="lead text-justify mr-4" style="background: rgba(78, 84, 79, 0.5);">SUpost is a marketplace where Stanford students and staff buy and sell their stuff. Posting requires an @stanford.edu email so, you can be sure that all items posted on SUpost are from people affiliated with Stanford.</p>
 		    					  <div class="d-flex">
 		    					    <button class="btn btn-primary">Post something</button>
-		    					  </div> 
+		    					  </div> --> 
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <%= image_tag("slider1.jpg", class: "d-block w-100 img-fluid banner", alt: "Second slide") %>
+                  <%#= image_tag("slider1.jpg", class: "d-block w-100 img-fluid banner", alt: "Second slide") %>
+                  <div id="slider1" class="d-block" style="height: 380px;"></div>
                   <div class="carousel-caption">
 					  				<p class="display-6">What we can do?</p>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <%= image_tag("slider4.jpg", class: "d-block w-100 img-fluid banner", alt: "Third slide") %>
+                  <%#= image_tag("slider4.jpg", class: "d-block w-100 img-fluid banner", alt: "Third slide") %>
+                  <div id="slider4" class="d-block" style="height: 380px;"></div>
                   <div class="carousel-caption">
     					  		<p class="display-6">What we can do?</p>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <%= image_tag("slider5.jpg", class: "d-block w-100 img-fluid banner", alt: "Forth slide") %>
+                  <%#= image_tag("slider5.jpg", class: "d-block w-100 img-fluid banner", alt: "Forth slide") %>
+                  <div id="slider5" class="d-block" style="height: 380px;"></div>
                   <div class="carousel-caption">
     					  		<p class="display-6">What we can do?</p>
                   </div>

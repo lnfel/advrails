@@ -30,7 +30,7 @@
           <!-- <a class="nav-link" href="#">Link</a> -->
           <%= link_to "Terms", terms_path, class: "nav-link" %>
         </li>
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Dropdown
           </a>
@@ -40,9 +40,12 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link btn btn-success btn-sm font-weight-bolder mr-2 ml-2 mb-2" href="#" tabindex="-1" aria-disabled="true">POST</a>
+        </li> -->
+        <li class="mr-3">
+          <!-- <a class="btn btn-success mr-3 ml-3" href="#">POST</a> -->
+          <% unless current_page?(new_post_path) %>
+            <%= link_to("POST", new_post_path, class: 'btn btn-success ml-3') %>
+          <% end %>
         </li>
       </ul>
       <!-- <form class="form-inline my-2 my-lg-0">
@@ -53,3 +56,19 @@
   </nav>
 </header>
 
+<!-- https://medium.com/@cromano31415/unlock-http-info-in-rails-with-rack-request-env-and-uri-c7835397dc14 -->
+<%#= request.env %>
+<%#= @uri = URI(request.env['REQUEST_URI']) %>
+<%#= URI(request.env['REQUEST_URI']) %>
+
+<!-- http://blogofchirag.blogspot.com/2008/09/variables-in-request-env-ruby-on-rails.html -->
+<!-- <table>
+<th>key</th>
+<th>Value</th>
+<%# for item in request.env %>
+<tr>
+<td><%#= item[0] %></td>
+<td><%#= item[1] %></td>
+</tr>
+<%# end %>
+</table> -->

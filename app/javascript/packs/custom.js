@@ -1,10 +1,15 @@
 // Initiate tooltip and popover from bootstrap 4
 // Don't forget to import this on app/javascript/packs/application.js
-$(function() {
+// $(function()
+// https://stackoverflow.com/questions/17317816/rails-javascript-only-works-after-reload
+// make sure turbolinks reload javascript every link clicks
+document.addEventListener("turbolinks:load", function() {
   $('[data-toggle="tooltip"]').tooltip();
   // Initialize toast notifications / alerts
-  $('.toast').toast({ delay: 2000, autohide: false });
+  $('.toast').toast({ delay: 2000 });
   $('.toast').toast('show');
+
+  $('[data-toggle="popover"]').popover();
 
   // Validate fileUpload
   $("input[type = 'submit']").click(function(){
@@ -72,5 +77,5 @@ $(function() {
 });
 
 $(function() {
-  $('[data-toggle="popover"]').popover();
+  // blank function
 });

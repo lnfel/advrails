@@ -11,12 +11,21 @@ require("channels")
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-import "bootstrap";
+require("bootstrap/dist/js/bootstrap")
+
+// https://gorails.com/forum/install-bootstrap-with-webpack-with-rails-6-beta
+//import "bootstrap";
 import "../stylesheets/application";
 import "../stylesheets/custom";
 import "../stylesheets/components/_form.scss";
 import "../stylesheets/highschool-usa-sans/highschool-usa-sans";
 import "./custom";
+
+// Expose jQuery to the window object:
+// https://stackoverflow.com/questions/58195417/bootstrap-js-functions-not-loading-in-rails-6-webpacker
+//import JQuery from 'jquery';
+//window.$ = window.JQuery = JQuery;
+
 // Heroku error:
 // ModuleNotFoundError: Module not found: Error: Can't resolve '@fortawesome/fontawesome-free/js/all' in '/tmp/build_23d82e6debf26a05e59da0fc0d46a4ff/app/javascript/packs'
 // Decided to use app/assets/stylesheets/application.scss to import font-awesome

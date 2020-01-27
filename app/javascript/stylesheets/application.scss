@@ -1,5 +1,6 @@
 /* Import */
-@import "bootstrap";
+@import "bootstrap/scss/bootstrap";
+/*@import "bootstrap";*/ /* can also work */
 /*@import '@fortawesome/fontawesome-free';*/
 
 /* Color Variables */
@@ -32,6 +33,10 @@ $su-blue: #083472;
 		height: 2em;
 		border-radius: 5px;
 	}
+
+  .fas.fa-bars {
+    color: #080808;
+  }
 }
 
 .bg-su-blue {
@@ -164,15 +169,13 @@ footer .line.three::after {
 /* Custom carousel-item fixed image size*/
 
 .img-fluid.banner  {
-    
-    height: 380px !important;
-    width: 850px !important; 
+  /*height: 380px !important;
+  width: 850px !important;*/
 }
 
 .img-fluid.img  {
-    
-    height: 300px;
-    width: 250px;
+  height: 300px;
+  width: 250px;
 }
 
 .carousel-content {
@@ -185,54 +188,55 @@ footer .line.three::after {
 }
 
 .carousel-caption{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    color: #fff;
-    text-align: center;
-    background: rgba(0,0,0,0.4);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+  background: rgba(0,0,0,0.4);
 }
 
-.breadcrumb{
-    background-color: #cce3fb;
-    
+.section-title {
+  background-color: #cce3fb;
+  padding: 0.75rem 1rem;
 }
 
 .rounded-circle { 
+<<<<<<< HEAD
     border-radius: 50% !important;
     width: 140px;
     height: 140px;
     
+=======
+  border-radius: 50% !important;
+>>>>>>> 6858d461f98a22e545d4917ded1cb9941c08ec61
 }
 
 h2 {
-    color: #5a5a5a;
-    
+  color: #5a5a5a;
 }
 
 /* Social link item */
 
 .list-inline-item {
-    display: inline-block;
-    
+  display: inline-block;
 }
 
 .social-link {
-    width: 30px;
-    height: 30px;
-    border: 1px solid #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #666;
-    border-radius: 50%;
-    transition: all 0.3s;
-    font-size: 0.9rem;
-    
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  border-radius: 50%;
+  transition: all 0.3s;
+  font-size: 0.9rem;
 }
 
 #contact .card:hover i,#contact .card:hover h4{

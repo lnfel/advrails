@@ -2,7 +2,7 @@
 <html>
   <head>
     <title><%= yield(:title) %> | SUpost</title>
-    <meta name="viewport" content="initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -46,6 +46,14 @@
     
    
     <%= render 'layouts/header' %>
+    <% unless current_page?(new_post_path) %>
+      <%# if params[:id].present? %>
+        <!-- the if statement checks for /posts/:id -->
+        <!-- do nothing -->
+      <%# else %>
+        <%= render 'layouts/search' %>
+      <%# end %>
+    <% end %>
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>

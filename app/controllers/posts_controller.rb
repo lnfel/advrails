@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
+	#rescue_from ActiveRecord::RecordNotFound, with: :show_errors
+	before_action :set_post, only: [:show, :edit, :update, :destroy]
+
 	def index
-		@posts = Post.all
+		@posts = Post.order(created_at: :desc).page(params[:page])
+		@types = Type.all
 	end
 
 	def new
@@ -30,6 +34,7 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
+		@post.feature_images.attach(params[:post][:feature_images])
 
 		respond_to do | format |
 			if @post.save
@@ -47,6 +52,15 @@ class PostsController < ApplicationController
 	end
 
 	private
+
+		def set_post
+      @post = Post.find_by!(id: params[:id])
+
+      # https://stackoverflow.com/questions/2336593/rescue-from-activerecordrecordnotfound-in-rails
+      rescue ActiveRecord::RecordNotFound
+      	flash[:notice] = "Try searching again or use the category list."
+  			redirect_to :action => 'index'
+    end
 
 		def post_params
 			params.require(:post).permit(:type_id, :category_id, :title, :price, :description, :email, :feature_images)

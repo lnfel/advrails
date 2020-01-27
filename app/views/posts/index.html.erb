@@ -58,11 +58,11 @@
 
 		    <div class="media-body py-2">
 		      <!-- <h5 class="h5 text-decoration-none mt-0 mb-1"><%#= p.title %></h5> -->
-		      <%= link_to p.title, post_path(p.id), class: 'h5 text-decoration-none mt-0 mb-1' %>
+		      <%= link_to p.title, post_path(p.id), class: 'h4 text-decoration-none d-block mb-3' %>
 		      <%#= content_tag(:p, p.description.truncate(200, omission: ' ...')) %>
-		      <%= markdown.render(p.description.truncate(200, omission: ' ...')).html_safe %>
-		      <%= link_to Type.find_by(id: p.type_id).name, "#", class: 'badge badge-primary' %>
-		      <%= link_to Category.find_by(id: p.category_id).name, "#", class: 'badge badge-primary' %>
+		      <%= markdown.render(p.description.truncate(150, omission: ' ...')).html_safe %>
+		      <%= link_to Type.find_by(id: p.type_id).name, "#", class: 'badge badge-primary px-3 py-2' %>
+		      <%= link_to Category.find_by(id: p.category_id).name, "#", class: 'badge badge-primary px-3 py-2' %>
 		    </div>
 		  </li>
 		<% end %>

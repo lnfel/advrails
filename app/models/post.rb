@@ -12,4 +12,7 @@ class Post < ApplicationRecord
   validates :email, presence: true
   #validates :price, format: { with: /\A[+-]?\d+\z/, message: "accepts integer only." }
 
+  # kaminari pagination config via model
+  # for global config look in: config/initializers/kaminari_config.rb
+  paginates_per 1
 end

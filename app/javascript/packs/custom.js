@@ -4,6 +4,7 @@
 // https://stackoverflow.com/questions/17317816/rails-javascript-only-works-after-reload
 // make sure turbolinks reload javascript every link clicks
 document.addEventListener("turbolinks:load", function() {
+  console.log("Dev log: script loaded!");
   $('[data-toggle="tooltip"]').tooltip();
   // Initialize toast notifications / alerts
   $('.toast').toast({ delay: 2000 });

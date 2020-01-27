@@ -14,7 +14,7 @@ require("channels")
 require("bootstrap/dist/js/bootstrap")
 
 // https://gorails.com/forum/install-bootstrap-with-webpack-with-rails-6-beta
-//import "bootstrap";
+//import "bootstrap"; // can also work
 import "../stylesheets/application";
 import "../stylesheets/custom";
 import "../stylesheets/components/_form.scss";

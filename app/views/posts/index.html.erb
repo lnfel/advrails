@@ -42,79 +42,165 @@
   </div>
 <!-- </div> -->
 
-<section class="container py-4 mb-4">
-	<h1><i class="fas fa-newspaper"></i> Posts</h1>
-	<ul class="list-unstyled">
-		<% @posts.each do |p| %>
-			<li class="media align-items-center border-bottom d-block d-md-flex py-2">
-		    <%#= image_tag(p.feature_images[0], class: 'mr-3') if p.feature_images[0].present? %>
-		    <div class="d-flex justify-content-center mx-auto mr-md-3" style="width: 340px;">
-			    <% if p.feature_images[0].present? %>
-			    	<%= image_tag(p.feature_images[0], class: 'align-self-center d-block', height: '191px') %>
-					<% else %>
-						<svg class="bd-placeholder-img mr-3" width="112" height="112" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 64x64"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">No Image</text></svg>
-			    <% end %>
-		    </div>
+<div class="container-fluid pb-4">
+	<div class="row">
+		<aside class="col-2 col-md-2 position-relative p-md-0 px-lg-3">
+			<%= render 'layouts/sidebar' %>
+		</aside>
+		<!-- <section class="container py-4 mb-4"> -->
+		<section class="col-10 col-md-10 p-md-0 px-lg-3">
+			<h1><i class="fas fa-newspaper"></i> Posts</h1>
 
-		    <div class="media-body py-2">
-		      <!-- <h5 class="h5 text-decoration-none mt-0 mb-1"><%#= p.title %></h5> -->
-		      <%= link_to p.title, post_path(p.id), class: 'h4 text-decoration-none d-block mb-3' %>
-		      <%#= content_tag(:p, p.description.truncate(200, omission: ' ...')) %>
-		      <%= markdown.render(p.description.truncate(150, omission: ' ...')).html_safe %>
-		      <%= link_to Type.find_by(id: p.type_id).name, "#", class: 'badge badge-primary px-3 py-2' %>
-		      <%= link_to Category.find_by(id: p.category_id).name, "#", class: 'badge badge-primary px-3 py-2' %>
-		    </div>
-		  </li>
-		<% end %>
-	</ul>
+			<nav aria-label="Page navigation example">
+			  <ul class="pagination justify-content-center">
+			    <li class="page-item disabled">
+			      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+			    </li>
+			    <li class="page-item"><a class="page-link" href="#">1</a></li>
+			    <li class="page-item"><a class="page-link" href="#">2</a></li>
+			    <li class="page-item"><a class="page-link" href="#">3</a></li>
+			    <li class="page-item">
+			      <a class="page-link" href="#">Next</a>
+			    </li>
+			  </ul>
+			</nav>
 
-	<nav aria-label="Page navigation example">
-	  <ul class="pagination justify-content-center">
-	    <li class="page-item disabled">
-	      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-	    </li>
-	    <li class="page-item"><a class="page-link" href="#">1</a></li>
-	    <li class="page-item"><a class="page-link" href="#">2</a></li>
-	    <li class="page-item"><a class="page-link" href="#">3</a></li>
-	    <li class="page-item">
-	      <a class="page-link" href="#">Next</a>
-	    </li>
-	  </ul>
-	</nav>
+			<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 m-md-0 mx-lg-1">
 
-	<ul class="list-unstyled">
-		<li class="media position-relative my-2">
-	    <svg class="bd-placeholder-img align-self-center mr-3" width="112" height="112" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 64x64"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">No Image</text></svg>
-	    <div class="media-body border-bottom py-2">
-	      <a href="#" class="h5 text-decoration-none mt-0 mb-1">List-based media object</a>
-	      <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-	      <a href="#" class="badge badge-primary">Type</a>
-	      <a href="#" class="badge badge-primary">Category</a>
-	    </div>
-	  </li>
+				<% @posts.each do |p| %>
+				<div class="col mb-4">
+				  <div class="card h-100">
+				  	<% if p.feature_images[0].present? %>
+				  		<div class="position-relative" style="padding-bottom: 60%;">
+				  			<%= image_tag(p.feature_images[0], class: 'position-absolute h-100 card-img-top rounded-0', style: 'top: 0; object-fit: cover;') %>
+				  		</div>
+				  	<% else %>
+				    	<svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">No Image Provided</text></svg>
+				    <% end %>
+				    <div class="card-body">
+				      <h5 class="card-title"><%= link_to p.title, post_path(p.id), class: 'text-decoration-none' %></h5>
+				      <div class="card-text"><%= markdown.render(p.description.truncate(150, omission: ' ...')).html_safe %></div>
+				      <%= link_to Type.find_by(id: p.type_id).name, "#", class: 'badge badge-primary px-3 py-2 mb-2' %>
+					    <%= link_to Category.find_by(id: p.category_id).name, "#", class: 'badge badge-primary px-3 py-2 mb-2' %>
+				    </div>
+				    <div class="card-footer text-muted">
+			      	<p class="card-text"><%= time_ago_in_words(p.created_at) %> ago</p>
+			    	</div>
+				  </div>
+				</div>
+			  <% end %>
 
-	  <li class="media my-2">
-	    <svg class="bd-placeholder-img align-self-center mr-3" width="112" height="112" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 64x64"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">No Image</text></svg>
-	    <div class="media-body border-bottom py-2">
-	      <a href="#" class=""><h5 class="mt-0 mb-1">List-based media object</h5></a>
-	      <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-	      <a href="#" class="badge badge-primary">Type</a>
-	      <a href="#" class="badge badge-primary">Category</a>
-	    </div>
-	  </li>
-	</ul>
+			  <div class="col mb-4">
+				  <div class="card h-100">
+				    <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">No Image Provided</text></svg>
+				    <div class="card-body">
+				      <h5 class="card-title">Card title</h5>
+				      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+				    </div>
+				    <div class="card-footer text-muted">
+			      	<p class="card-text">Last updated 3 mins ago</p>
+			    	</div>
+				  </div>
+				</div>
 
-	<nav aria-label="Page navigation example">
-	  <ul class="pagination justify-content-center">
-	    <li class="page-item disabled">
-	      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-	    </li>
-	    <li class="page-item"><a class="page-link" href="#">1</a></li>
-	    <li class="page-item"><a class="page-link" href="#">2</a></li>
-	    <li class="page-item"><a class="page-link" href="#">3</a></li>
-	    <li class="page-item">
-	      <a class="page-link" href="#">Next</a>
-	    </li>
-	  </ul>
-	</nav>
-</section>
+			  <div class="col mb-4">
+				  <div class="card h-100">
+				    <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">No Image Provided</text></svg>
+				    <div class="card-body">
+				      <h5 class="card-title">Card title</h5>
+				      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+				    </div>
+				    <div class="card-footer text-muted">
+			      	<p class="card-text">Last updated 3 mins ago</p>
+			    	</div>
+				  </div>
+				</div>
+
+				<div class="col mb-4">
+				  <div class="card h-100">
+				    <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">No Image Provided</text></svg>
+				    <div class="card-body">
+				      <h5 class="card-title">Card title</h5>
+				      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+				    </div>
+				    <div class="card-footer text-muted">
+			      	<p class="card-text">Last updated 3 mins ago</p>
+			    	</div>
+				  </div>
+				</div>
+
+				<div class="col mb-4">
+				  <div class="card h-100">
+				    <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">No Image Provided</text></svg>
+				    <div class="card-body">
+				      <h5 class="card-title">Card title</h5>
+				      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+				    </div>
+				    <div class="card-footer text-muted">
+			      	<p class="card-text">Last updated 3 mins ago</p>
+			    	</div>
+				  </div>
+				</div>
+			</div>
+
+			<!-- <ul class="list-unstyled">
+				<%# @posts.each do |p| %>
+					<li class="media align-items-center border-bottom d-block d-md-flex py-2">
+				    <%#= image_tag(p.feature_images[0], class: 'mr-3') if p.feature_images[0].present? %>
+				    <div class="d-flex justify-content-center mx-auto mr-md-3" style="width: 340px;">
+					    <%# if p.feature_images[0].present? %>
+					    	<%#= image_tag(p.feature_images[0], class: 'align-self-center d-block', height: '191px') %>
+							<%# else %>
+								<svg class="bd-placeholder-img mr-3" width="112" height="112" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 64x64"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">No Image</text></svg>
+					    <%# end %>
+				    </div>
+
+				    <div class="media-body py-2">
+				      <%#= link_to p.title, post_path(p.id), class: 'h4 text-decoration-none d-block mb-3' %>
+				      <%#= content_tag(:p, p.description.truncate(200, omission: ' ...')) %>
+				      <%#= markdown.render(p.description.truncate(150, omission: ' ...')).html_safe %>
+				      <%#= link_to Type.find_by(id: p.type_id).name, "#", class: 'badge badge-primary px-3 py-2' %>
+				      <%#= link_to Category.find_by(id: p.category_id).name, "#", class: 'badge badge-primary px-3 py-2' %>
+				    </div>
+				  </li>
+				<%# end %>
+			</ul> -->
+
+			<!-- <ul class="list-unstyled">
+				<li class="media position-relative my-2">
+			    <svg class="bd-placeholder-img align-self-center mr-3" width="112" height="112" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 64x64"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">No Image</text></svg>
+			    <div class="media-body border-bottom py-2">
+			      <a href="#" class="h5 text-decoration-none mt-0 mb-1">List-based media object</a>
+			      <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+			      <a href="#" class="badge badge-primary">Type</a>
+			      <a href="#" class="badge badge-primary">Category</a>
+			    </div>
+			  </li>
+
+			  <li class="media my-2">
+			    <svg class="bd-placeholder-img align-self-center mr-3" width="112" height="112" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 64x64"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">No Image</text></svg>
+			    <div class="media-body border-bottom py-2">
+			      <a href="#" class=""><h5 class="mt-0 mb-1">List-based media object</h5></a>
+			      <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+			      <a href="#" class="badge badge-primary">Type</a>
+			      <a href="#" class="badge badge-primary">Category</a>
+			    </div>
+			  </li>
+			</ul> -->
+
+			<nav aria-label="Page navigation example">
+			  <ul class="pagination justify-content-center">
+			    <li class="page-item disabled">
+			      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+			    </li>
+			    <li class="page-item"><a class="page-link" href="#">1</a></li>
+			    <li class="page-item"><a class="page-link" href="#">2</a></li>
+			    <li class="page-item"><a class="page-link" href="#">3</a></li>
+			    <li class="page-item">
+			      <a class="page-link" href="#">Next</a>
+			    </li>
+			  </ul>
+			</nav>
+		</section>
+	</div>
+</div>

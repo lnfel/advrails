@@ -1,90 +1,14 @@
 <% provide(:title, "Home") %>
-<h1><%#= yield(:title) %></h1>
+<!-- <h1><%#= yield(:title) %></h1> -->
 
 <div class="container-fluid pb-4">
 	<div class="row">
-		<aside class="col-2 col-md-2 position-relative p-md-0 px-lg-3">
-			<div class="accordion position-absolute" id="asideNav">
-				<div class="sticky">
-				<div class="card" style="border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;">
-					<div class="card-header bg-su-blue p-0" id="asideNavOne">
-						<h2 class="mb-0">
-							<button class="btn btn-block btn-primary text-center text-xl-left" type="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-								<i class="fas fa-bars"></i><span class="d-none d-xl-inline"> Overview</span>
-							</button>
-						</h2>
-					</div>
-					<div class="collapse show" id="collapseOne" aria-labelledby="asideNavOne" data-parent="#asideNav">
-						<div class="card-body p-0">
-							<ul class="nav flex-column">
-								<li class="nav-item border-bottom">
-									<a class="nav-link text-center text-xl-left" href="#">
-										<i class="fas fa-list-ul"></i>
-										<span class="d-none d-xl-inline"> Recent Posts </span>
-										<span class="badge badge-danger rounded-0 d-none d-md-inline">10</span>
-									</a>
-								</li>
-								<li class="nav-item border-bottom">
-									<a class="nav-link text-center text-xl-left" href="#">
-										<i class="fas fa-home"></i>
-										<span class="d-none d-xl-inline"> Housing </span>
-										<span class="badge badge-danger rounded-0 d-none d-md-inline">4</span>
-									</a>
-								</li>
-								<li class="nav-item border-bottom">
-									<a class="nav-link text-center text-xl-left" href="#">
-										<i class="fas fa-dollar-sign" mr-2></i><span class="d-none d-xl-inline"> For Sale</span>
-									</a>
-								</li>
-								<li class="nav-item border-bottom">
-									<a class="nav-link text-center text-xl-left" href="#">
-										<i class="fas fa-user-check"></i><span class="d-none d-xl-inline"> Jobs</span>
-									</a>
-								</li>
-								<li class="nav-item border-bottom">
-									<a class="nav-link text-center text-xl-left" href="#">
-										<i class="fas fa-hand-holding-heart"></i><span class="d-none d-xl-inline"> Personals</span>
-									</a>
-								</li>
-								<li class="nav-item border-bottom">
-									<a class="nav-link text-center text-xl-left" href="#">
-										<i class="fas fa-handshake"></i><span class="d-none d-xl-inline"> Campus Job</span>
-									</a>
-								</li>
-								<li class="nav-item border-bottom">
-									<a class="nav-link text-center text-xl-left" href="#">
-										<i class="fas fa-users"></i><span class="d-none d-xl-inline"> Community</span>
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link text-center text-xl-left" href="#">
-										<i class="fas fa-user-friends"></i><span class="d-none d-xl-inline"> Services</span>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<!--  -->
-				<!-- <div class="card">
-					<div class="card-header bg-su-blue p-0" id="asideNavTwo">
-						<h2 class="mb-0">
-							<button class="btn btn-block btn-primary text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-								Category
-							</button>
-						</h2>
-					</div>
-					<div class="collapse" id="collapseTwo" aria-labelledby="asideNavTwo" data-parent="#asideNav">
-						<div class="card-body">
-							List of items
-						</div>
-					</div>
-				</div> -->
-				</div>
-			</div>
+		<aside class="col-2 col-md-2 position-relative p-md-0">
+			<%= render 'layouts/sidebar' %>
 		</aside>
 		<main class="col-10 col-md-10 p-md-0 px-lg-3">
-			<div class="row">
+			<!-- m-md-0 mx-lg-1 remove horizontal scrollbar on md and restore margin on lg -->
+			<div class="row m-md-0 mx-lg-1">
 				<!-- Main 1 start -->
 				<div class="col-lg-6">
 					<section class="pb-4">
@@ -151,23 +75,23 @@
 						<div class="list-group list-group-flush">
 						  <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
 						  	Software Engineer - Mobile - amira@structclub.com
-						  	<span class="badge badge-primary badge-pill">3</span>
+						  	<span class="badge badge-primary badge-pill px-3 py-2">3</span>
 						  </a>
 						  <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
 						  	Residential Staff AM/PM/ON - rbenage@camdentransitionalliving.com
-						  	<span class="badge badge-primary badge-pill">1</span>
+						  	<span class="badge badge-primary badge-pill px-3 py-2">1</span>
 						  </a>
 						  <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
 						  	Embedded Controls Engineer - careers@neweagle.net
-						  	<span class="badge badge-primary badge-pill">5</span>
+						  	<span class="badge badge-primary badge-pill px-3 py-2">5</span>
 						  </a>
 						  <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
 						  	Dating Coach for men - hr@livelongdoctor.com
-						  	<span class="badge badge-primary badge-pill">7</span>
+						  	<span class="badge badge-primary badge-pill px-3 py-2">7</span>
 						  </a>
 						  <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
 						  	Ruby on Rails developer - Remote - careers@supost.com
-						  	<span class="badge badge-primary badge-pill">3</span>
+						  	<span class="badge badge-primary badge-pill px-3 py-2">3</span>
 						  </a>
 						</div>
 						<div class="d-block bg-gray mb-4">
@@ -180,11 +104,13 @@
 						<div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-1 row-cols-xl-2">
 						  <div class="col mb-4">
 						    <div class="card h-100">
-						      <%= image_tag("img4.jpg", class: "img-fluid") %>
+						    	<div class="position-relative" style="padding-bottom: 60%;">
+						      	<%= image_tag("img4.jpg", class: 'position-absolute h-100 card-img-top rounded-0', style: 'top: 0; object-fit: cover;') %>
+						    	</div>
 						      <div class="card-body">
 						        <h5 class="card-title">Louis Vuitton</h5>
-						        <a class="badge badge-primary" href="#">Accessories</a>
-						        <a class="badge badge-primary" href="#">Bags</a>
+						        <a class="badge badge-primary px-3 py-2" href="#">Accessories</a>
+						        <a class="badge badge-primary px-3 py-2" href="#">Bags</a>
 						      </div>
 						      <div class="card-footer text-muted">
 					        	25 mins ago
@@ -194,11 +120,13 @@
 						  <!--  -->
 						  <div class="col mb-4">
 						    <div class="card h-100">
-						      <%= image_tag("img5.jpg", class: "img-fluid") %>
+						      <div class="position-relative" style="padding-bottom: 60%;">
+						      	<%= image_tag("img5.jpg", class: 'position-absolute h-100 card-img-top rounded-0', style: 'top: 0; object-fit: cover;') %>
+						    	</div>
 						      <div class="card-body">
 						        <h5 class="card-title">Support HK Tees</h5>
-						        <a class="badge badge-primary" href="#">Shirts</a>
-						        <a class="badge badge-primary" href="#">Clothing</a>
+						        <a class="badge badge-primary px-3 py-2" href="#">Shirts</a>
+						        <a class="badge badge-primary px-3 py-2" href="#">Clothing</a>
 						      </div>
 						      <div class="card-footer text-muted">
 					        	29 mins ago
@@ -208,11 +136,13 @@
 						  <!--  -->
 						  <div class="col mb-4">
 						    <div class="card h-100">
-						      <%= image_tag("img6.jpg", class: "img-fluid") %>
+						      <div class="position-relative" style="padding-bottom: 60%;">
+						      	<%= image_tag("img6.jpg", class: 'position-absolute h-100 card-img-top rounded-0', style: 'top: 0; object-fit: cover;') %>
+						    	</div>
 						      <div class="card-body">
 						        <h5 class="card-title">Guitar Art & Lutherie Cedar CW Antique Burst Folk</h5>
-						        <a class="badge badge-primary" href="#">General</a>
-						        <a class="badge badge-primary" href="#">For Sale</a>
+						        <a class="badge badge-primary px-3 py-2" href="#">General</a>
+						        <a class="badge badge-primary px-3 py-2" href="#">For Sale</a>
 						      </div>
 						      <div class="card-footer text-muted">
 					        	2 hours ago
@@ -222,11 +152,13 @@
 						  <!--  -->
 						  <div class="col mb-4">
 						    <div class="card h-100">
-						      <%= image_tag("img7.jpg", class: "img-fluid") %>
+						      <div class="position-relative" style="padding-bottom: 60%;">
+						      	<%= image_tag("img7.jpg", class: 'position-absolute h-100 card-img-top rounded-0', style: 'top: 0; object-fit: cover;') %>
+						    	</div>
 						      <div class="card-body">
 						        <h5 class="card-title">Creamy white carpet (3'3'' by 4'7'')</h5>
-						        <a class="badge badge-primary" href="#">Household items</a>
-						        <a class="badge badge-primary" href="#">For Sale</a>
+						        <a class="badge badge-primary px-3 py-2" href="#">Household items</a>
+						        <a class="badge badge-primary px-3 py-2" href="#">For Sale</a>
 						      </div>
 						      <div class="card-footer text-muted">
 					        	1 day ago
@@ -247,11 +179,13 @@
 						<div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-1 row-cols-xl-2">
 						  <div class="col mb-4">
 						    <div class="card h-100">
-						      <%= image_tag("img1.jpg", class: "img-fluid") %>
+						      <div class="position-relative" style="padding-bottom: 60%;">
+						      	<%= image_tag("img1.jpg", class: 'position-absolute h-100 card-img-top rounded-0', style: 'top: 0; object-fit: cover;') %>
+						    	</div>
 						      <div class="card-body">
 						        <h5 class="card-title">Private Room Close to Stanford Campus</h5>
-						        <a class="badge badge-primary" href="#">Housing</a>
-						        <a class="badge badge-primary" href="#">For Rent</a>
+						        <a class="badge badge-primary px-3 py-2" href="#">Housing</a>
+						        <a class="badge badge-primary px-3 py-2" href="#">For Rent</a>
 						      </div>
 						      <div class="card-footer text-muted">
 					        	1 hour ago
@@ -261,11 +195,13 @@
 						  <!--  -->
 						  <div class="col mb-4">
 						    <div class="card h-100">
-						      <%= image_tag("img2.jpg", class: "img-fluid") %>
+						      <div class="position-relative" style="padding-bottom: 60%;">
+						      	<%= image_tag("img2.jpg", class: 'position-absolute h-100 card-img-top rounded-0', style: 'top: 0; object-fit: cover;') %>
+						    	</div>
 						      <div class="card-body">
 						        <h5 class="card-title">Private Room w/wo Private Bath, w Sunnyvale, by DeAnza and Apple Park</h5>
-						        <a class="badge badge-primary" href="#">Shared</a>
-						        <a class="badge badge-primary" href="#">For Rent</a>
+						        <a class="badge badge-primary px-3 py-2" href="#">Shared</a>
+						        <a class="badge badge-primary px-3 py-2" href="#">For Rent</a>
 						      </div>
 						      <div class="card-footer text-muted">
 					        	2 days ago
@@ -275,12 +211,14 @@
 						  <!--  -->
 						  <div class="col mb-4">
 						    <div class="card h-100">
-						      <%= image_tag("img3.jpg", class: "img-fluid") %>
+						      <div class="position-relative" style="padding-bottom: 60%;">
+						      	<%= image_tag("img3.jpg", class: 'position-absolute h-100 card-img-top rounded-0', style: 'top: 0; object-fit: cover;') %>
+						    	</div>
 						      <div class="card-body">
 						        <h5 class="card-title">Short-Term Furnished Room in Central Mountain View</h5>
-						        <a class="badge badge-primary" href="#">Room</a>
-						        <a class="badge badge-primary" href="#">For Rent</a>
-						        <a class="badge badge-primary" href="#">Furnished</a>
+						        <a class="badge badge-primary px-3 py-2" href="#">Room</a>
+						        <a class="badge badge-primary px-3 py-2" href="#">For Rent</a>
+						        <a class="badge badge-primary px-3 py-2" href="#">Furnished</a>
 						      </div>
 						      <div class="card-footer text-muted">
 					        	2 days ago
@@ -290,13 +228,16 @@
 						  <!--  -->
 						  <div class="col mb-4">
 						    <div class="card h-100">
-						    	<svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">No Image Provided</text></svg>
+						    	<div class="position-relative" style="padding-bottom: 60%;">
+						      	<%#= image_tag("img4.jpg", class: 'position-absolute h-100 card-img-top rounded-0', style: 'top: 0; object-fit: cover;') %>
+						      	<svg class="bd-placeholder-img position-absolute h-100 card-img-top rounded-0" width="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">No Image Provided</text></svg>
+						    	</div>
 						      <!-- <img src="..." class="card-img-top" alt="..."> -->
 						      <div class="card-body">
 						        <h5 class="card-title">a loft and a room at Faculty home for rent</h5>
-						        <a class="badge badge-primary" href="#">Room</a>
-						        <a class="badge badge-primary" href="#">For Rent</a>
-						        <a class="badge badge-primary" href="#">Faculty</a>
+						        <a class="badge badge-primary px-3 py-2" href="#">Room</a>
+						        <a class="badge badge-primary px-3 py-2" href="#">For Rent</a>
+						        <a class="badge badge-primary px-3 py-2" href="#">Faculty</a>
 						      </div>
 						      <div class="card-footer text-muted">
 					        	1 week ago

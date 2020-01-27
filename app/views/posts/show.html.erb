@@ -8,29 +8,116 @@
   <%#= @post.feature_images.each { |e| puts e } %>
 <%# end %>
 
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">Home</a></li>
-    <li class="breadcrumb-item"><%= link_to "Posts", posts_path %></li>
-    <li class="breadcrumb-item"><a href="#"><%= Type.find_by(id: @post.type_id).name %></a></li>
-    <li class="breadcrumb-item active" aria-current="page"><%= Category.find_by(id: @post.category_id).name %></li>
-  </ol>
-</nav>
-
-<section class="container py-4 mb-4">
-  <%= content_tag(:h3, @post.title) %>
-  <%= content_tag(:span, number_to_currency(@post.price, precision: 2, strip_insignificant_zeros: true), class: 'lead font-weight-bold text-success') %>
+<div class="container-fluid pb-4">
   <div class="row">
-    <% @post.feature_images.each do |image| %>
-      <!-- <div class="col-12 col-md-6 d-flex justify-content-center"> -->
-        <%= image_tag image, class: 'mx-auto d-block d-md-inline mb-2 img-thumbnail img-fluid' %>
-      <!-- </div> -->
-    <% end %>
+    <aside class="col-2 col-md-2 position-relative p-md-0">
+      <%= render 'layouts/sidebar' %>
+    </aside>
+    <main class="col-10 col-md-10 p-md-0 px-lg-3">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item"><%= link_to "Posts", posts_path %></li>
+          <li class="breadcrumb-item"><a href="#"><%= Type.find_by(id: @post.type_id).name %></a></li>
+          <li class="breadcrumb-item active" aria-current="page"><%= Category.find_by(id: @post.category_id).name %></li>
+        </ol>
+      </nav>
+      <section class="pb-4">
+        <div class="card">
+          <div class="card-header">
+            <%= content_tag(:h3, @post.title) %>
+            <%= content_tag(:span, number_to_currency(@post.price, precision: 2, strip_insignificant_zeros: true), class: 'lead font-weight-bold text-success') %>
+          </div>
+          <div class="card-body pb-0">
+            <div class="row py-4">
+              <% @post.feature_images.each do |image| %>
+                <!-- <div class="col-12 col-md-6 d-flex justify-content-center"> -->
+                  <%= image_tag image, class: 'mx-auto d-block d-md-inline mb-2 img-thumbnail img-fluid' %>
+                <!-- </div> -->
+              <% end %>
+            </div>
+
+            <%#= content_tag(:pre, @post.description, class: 'text-break') %>
+            <!-- markdown helper: look in app/helpers/application_helper.rb -->
+            <div class="card-text">
+              <%= markdown.render(@post.description).html_safe %>
+            </div>
+            <!-- use markdown without helper method -->
+            <%#= Markdown.new(@post.description, :hard_wrap).to_html.html_safe %>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Related posts</h3>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 m-md-0 mx-lg-1">
+          <div class="col mb-4">
+            <div class="card h-100">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">No Image Provided</text></svg>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+              </div>
+              <div class="card-footer text-muted">
+                <p class="card-text">Last updated 3 mins ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">No Image Provided</text></svg>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+              </div>
+              <div class="card-footer text-muted">
+                <p class="card-text">Last updated 3 mins ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">No Image Provided</text></svg>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+              </div>
+              <div class="card-footer text-muted">
+                <p class="card-text">Last updated 3 mins ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="card h-100">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">No Image Provided</text></svg>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+              </div>
+              <div class="card-footer text-muted">
+                <p class="card-text">Last updated 3 mins ago</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<!-- <section class="container py-4 mb-4">
+  <%#= content_tag(:h3, @post.title) %>
+  <%#= content_tag(:span, number_to_currency(@post.price, precision: 2, strip_insignificant_zeros: true), class: 'lead font-weight-bold text-success') %>
+  <div class="row">
+    <%# @post.feature_images.each do |image| %>
+        <%#= image_tag image, class: 'mx-auto d-block d-md-inline mb-2 img-thumbnail img-fluid' %>
+    <%# end %>
   </div>
   <%#= content_tag(:pre, @post.description, class: 'text-break') %>
-  <!-- markdown helper: look in app/helpers/application_helper.rb -->
-  <%= markdown.render(@post.description).html_safe %>
+  <%#= markdown.render(@post.description).html_safe %>
 
-  <!-- use markdown without helper method -->
   <%#= Markdown.new(@post.description, :hard_wrap).to_html.html_safe %>
-</section>
+</section> -->

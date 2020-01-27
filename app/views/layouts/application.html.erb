@@ -47,12 +47,12 @@
    
     <%= render 'layouts/header' %>
     <% unless current_page?(new_post_path) %>
-      <% if params[:id].present? %>
+      <%# if params[:id].present? %>
         <!-- the if statement checks for /posts/:id -->
         <!-- do nothing -->
-      <% else %>
+      <%# else %>
         <%= render 'layouts/search' %>
-      <% end %>
+      <%# end %>
     <% end %>
     <%= yield %>
     <%= render 'layouts/footer' %>

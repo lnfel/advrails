@@ -14,5 +14,16 @@ class Post < ApplicationRecord
 
   # kaminari pagination config via model
   # for global config look in: config/initializers/kaminari_config.rb
-  paginates_per 1
+  paginates_per 10
+
+  # enable searchkick
+  searchkick word_middle: [:title, :description]
+  Post.reindex
+
+  def search_data
+    {
+      title: title,
+      description: description
+    }
+  end
 end

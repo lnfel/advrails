@@ -5,7 +5,7 @@
       <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header bg-danger text-light">
           <!-- <img src="..." class="rounded mr-2" alt="..."> -->
-          <strong class="mr-auto"><i class="fas fa-exclamation-triangle"></i> Form error</strong>
+          <strong class="mr-auto"><i class="fas fa-exclamation-triangle"></i> Form error</strong    >
           <small class="text-light">just now</small>
           <button type="button" class="ml-2 mb-1 close text-light" data-dismiss="toast" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -39,19 +39,30 @@
 <!-- </div> -->
 
 <section class="testimonial py-5" id="testimonial">
-    <div class="container">
+    <div class="container mr-5">
         <div class="row ">
-            <div class="col-md-4 py-5 bg-primary text-white text-center ">
+            <div class="col-md-4 py-5 bg-light text-white text-center border">
                 <div class=" ">
                     <div class="card-body">
                         <img src="http://www.ansonika.com/mavia/img/registration_bg.svg" style="width:30%">
-                        <h3 class="py-3">Create Post</h3>
-                        <p>Tation argumentum et usu, dicit viderer evertitur te has. Eu dictas concludaturque usu, facete detracto patrioque an per, lucilius pertinacia eu vel.
+                        <h4 class="color-code py-3">Post Guidelines</h4>
+                        <p class="color-code breadcrumb">Tation argumentum et usu, dicit viderer evertitur te has. Eu dictas concludaturque usu, facete detracto patrioque an per, lucilius pertinacia eu vel.
+                        </p>
+                        <p class="color-code breadcrumb">Tation argumentum et usu, dicit viderer evertitur te has.</p>
+                    </div>
+                </div>
+                <div class=" ">
+                    <div class="card-body">
+                        <img src="https://www.svgrepo.com/show/244895/post.svg" style="width:30%">
+                        <h4 class="color-code py-3">Another Section</h4>
+                        <p class="color-code breadcrumb">Tation argumentum et usu, dicit viderer evertitur te has. Eu dictas concludaturque usu, facete detracto patrioque an per, lucilius pertinacia eu vel.
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-8 py-5 border">
+            <div class="mr-2">
+            </div>
+            <div class="col-md-7 py-5 border">
                 <h4 class="pb-4">Please fill post information</h4>
                <%= form_with(model: @post, local: true, multipart: true) do |f| %>
                <!-- <div style="position: absolute; top: 15px; right: 15px; z-index: 3;">

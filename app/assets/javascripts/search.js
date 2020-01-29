@@ -12,18 +12,18 @@ $(document).ready(function(){
 		//		listlocation: "posts"
 		//	}
 		//],
-		getValue: "name"
-		//list: {
-		//	onChooseEvent: function(){
-		//		var url = $("input[data-behavior='autocomplete']").getSelectedItemData().url
-		//		console.log(url);
-		//		$("input[data-behavior='autocomplete']").val("")
-		//		Turbolinks.visit(url);
-		//	},
-		//	match: {
-    //  	enabled: true
-    //	}
-		//}
+		getValue: "title",
+		list: {
+			onChooseEvent: function(){
+				var url = $("input[data-behavior='autocomplete']").getSelectedItemData().url
+				console.log(url);
+				$("input[data-behavior='autocomplete']").val("")
+				Turbolinks.visit(url);
+			},
+			match: {
+      	enabled: true
+    	}
+		}
 	}
 
 	//$("input[data-behavior='autocomplete']").easyAutocomplete(options)

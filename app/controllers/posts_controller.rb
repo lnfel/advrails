@@ -3,6 +3,13 @@ class PostsController < ApplicationController
 	before_action :set_post, only: [:show, :edit, :update, :destroy]
 
 	def index
+		search = params[:term].present? ? params[:term] : nil
+		@search_result = if search
+			#Post.where("title LIKE ? OR description LIKE ?", "%#{search}", "%#{search}")
+			Post.search(search)
+		else
+			@posts = Post.order(created_at: :desc).page(params[:page])
+		end
 		@posts = Post.order(created_at: :desc).page(params[:page])
 		@types = Type.all
 	end
@@ -49,6 +56,16 @@ class PostsController < ApplicationController
 
 	def show
 		
+	end
+
+	def search
+		render json: Post.search(params[:query], {
+      fields: ["title^5", "description"],
+      match: :word_start,
+      limit: 10,
+      load: false,
+      misspellings: {below: 5}
+    }).map(&:title)
 	end
 
 	private

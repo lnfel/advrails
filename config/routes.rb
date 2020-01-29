@@ -14,7 +14,11 @@ Rails.application.routes.draw do
   #get '/dashboard', to: 'dashboard#index'
 
   # Post
-  resources :posts
+  resources :posts do
+    collection do
+      get :search
+    end
+  end
   #get '/post', to: 'post#index'
   
   get '/check.txt', to: proc {[200, {}, ['it_works']]}

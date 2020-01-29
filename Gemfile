@@ -42,6 +42,9 @@ gem 'redcarpet', '3.5.0'
 # Pagination
 gem 'kaminari', '1.1.1'
 
+# Global Search
+gem 'searchkick', '4.2.1'
+
 group :development, :test do
 	# Use sqlite3 as the database for Active Record
 	gem 'sqlite3', '1.4.1'

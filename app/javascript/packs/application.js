@@ -12,6 +12,7 @@ require("channels")
 //= require popper
 //= require bootstrap-sprockets
 require("bootstrap/dist/js/bootstrap")
+require("easy-autocomplete/dist/jquery.easy-autocomplete")
 
 // https://gorails.com/forum/install-bootstrap-with-webpack-with-rails-6-beta
 //import "bootstrap"; // can also work
@@ -22,7 +23,7 @@ import "../stylesheets/highschool-usa-sans/highschool-usa-sans";
 // Twitter typeahead for autocomplete search
 //import "./typeahead.bundle"
 import "./custom";
-import "easy-autocomplete/dist/jquery.easy-autocomplete"
+//import "easy-autocomplete/dist/jquery.easy-autocomplete"
 
 
 // Expose jQuery to the window object:

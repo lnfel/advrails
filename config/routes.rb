@@ -13,12 +13,18 @@ Rails.application.routes.draw do
   #resources :dashboard, only: [:index]
   #get '/dashboard', to: 'dashboard#index'
 
-  # Post
-  resources :posts do
-    collection do
-      get :search
-    end
-  end
+  # Posts
+  resources :posts
+
+  get :search, controller: :posts
+  get :autocomplete, controller: :posts
+
+  # for typeahead but is not working due to bloodhound 
+  #resources :posts do
+  #  collection do
+  #    get :search
+  #  end
+  #end
   #get '/post', to: 'post#index'
   
   get '/check.txt', to: proc {[200, {}, ['it_works']]}

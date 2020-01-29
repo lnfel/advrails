@@ -101,6 +101,8 @@ GEM
     hashie (4.0.0)
     i18n (1.7.0)
       concurrent-ruby (~> 1.0)
+    jb (0.7.1)
+      multi_json
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
     jquery-rails (4.3.5)
@@ -249,6 +251,7 @@ DEPENDENCIES
   byebug
   capybara (= 3.29.0)
   font-awesome-sass (= 5.12)
+  jb (= 0.7.1)
   jbuilder (= 2.9.1)
   jquery-rails (= 4.3.5)
   kaminari (= 1.1.1)

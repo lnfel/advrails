@@ -21,6 +21,15 @@
     <!-- Bootstrap, JQuery, Popper plus custom overrides -->
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <!-- 
+      Calling jquery again for easy-autocomplete
+      Note: we're also calling jquery through webpacker without conflict with this
+    -->
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <%= javascript_include_tag 'EasyAutocomplete-1.3.5/jquery.easy-autocomplete.min' %>
+    <%= javascript_include_tag 'search' %>
+
     <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Squada+One&display=swap" rel="stylesheet">
     <!-- NOTE: Bootstrap and font-awesome as well as custom css or js files are added through yarn

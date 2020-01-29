@@ -1,20 +1,24 @@
 <div class="container py-4">
-  <%= form_tag(posts_path, method: :get, class: '', role: 'search') do %>
+  <%= form_with(url: search_path, local: true, method: :get, class: '') do |search| %>
+  <%#= form_tag(posts_path, method: :get, class: '', role: 'search') do %>
   <!-- <form class=""> -->
     <div class="form-row">
       <div class="col">
         <div class="input-group mb-2">
-          <%= text_field_tag :term,
-              params[:term],
-              id: 'posts_search',
-              type: 'search',
-              autocomplete: :off,
-              placeholder: 'Search anything...',
-              class: 'form-control'
-           %>
+          <%= search.text_field :term, placeholder: 'Search anything...', data: { behavior: 'autocomplete' }, class: 'form-control' %>
+          <%#= text_field_tag :term,
+            params[:term],
+            id: 'posts_search',
+            type: 'search',
+            autocomplete: :off,
+            placeholder: 'Search anything...',
+            'data-behavior': 'autocomplete',
+            class: 'form-control'
+          %>
           <!-- <input class="form-control" type="search" name="term" placeholder="Search something..."> -->
           <div class="input-group-append">
-            <%= submit_tag 'Search', name: nil, class: 'btn btn-success' %>
+            <%= search.button 'Search', class: 'btn btn-success', name: nil %>
+            <%#= submit_tag 'Search', name: nil, class: 'btn btn-success' %>
             <!-- <button class="btn btn-success">Search</button> -->
           </div>
         </div>

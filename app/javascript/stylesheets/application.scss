@@ -99,14 +99,18 @@ $su-blue: #083472;
 .accordion.position-absolute {
   top: 0;
   left: 15px;
-  width: calc(100% - 30px);
+  min-width: calc(100% - 30px);
   height: 100%;
 }
 
 .accordion .sticky {
   position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
   position: sticky;
   top: 15px;
+  z-index: 1;
 }
 
 /* Footer */

@@ -12,6 +12,7 @@ require("channels")
 //= require popper
 //= require bootstrap-sprockets
 require("bootstrap/dist/js/bootstrap")
+require("easy-autocomplete/dist/jquery.easy-autocomplete")
 
 // https://gorails.com/forum/install-bootstrap-with-webpack-with-rails-6-beta
 //import "bootstrap"; // can also work
@@ -19,7 +20,11 @@ import "../stylesheets/application";
 import "../stylesheets/custom";
 import "../stylesheets/components/_form.scss";
 import "../stylesheets/highschool-usa-sans/highschool-usa-sans";
+// Twitter typeahead for autocomplete search
+//import "./typeahead.bundle"
 import "./custom";
+//import "easy-autocomplete/dist/jquery.easy-autocomplete"
+
 
 // Expose jQuery to the window object:
 // https://stackoverflow.com/questions/58195417/bootstrap-js-functions-not-loading-in-rails-6-webpacker

@@ -15,6 +15,7 @@ gem 'webpacker', '4.2.2'
 gem 'turbolinks', '5.2.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '2.9.1'
+gem 'jb', '0.7.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -41,6 +42,9 @@ gem 'redcarpet', '3.5.0'
 
 # Pagination
 gem 'kaminari', '1.1.1'
+
+# Global Search
+gem 'searchkick', '4.2.1'
 
 group :development, :test do
 	# Use sqlite3 as the database for Active Record

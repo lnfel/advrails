@@ -3,7 +3,7 @@
 // $(function()
 // https://stackoverflow.com/questions/17317816/rails-javascript-only-works-after-reload
 // make sure turbolinks reload javascript every link clicks
-document.addEventListener("turbolinks:load", function() {
+$(document).on("turbolinks:load", function() {
   console.log("Dev log: script loaded!");
   $('[data-toggle="tooltip"]').tooltip();
   // Initialize toast notifications / alerts
@@ -75,6 +75,20 @@ document.addEventListener("turbolinks:load", function() {
     }
   });
   // end #post_price
+
+  // Twitter typeahead
+  /*var posts = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.whitespace,
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    remote: {
+      url: '/posts/search?term=%QUERY',
+      wildcard: '%QUERY'
+    }
+  });
+  $('#posts_search').typeahead(null, {
+    source: posts
+  });*/
+  // Twitter typeahead end
 });
 
 $(function(){

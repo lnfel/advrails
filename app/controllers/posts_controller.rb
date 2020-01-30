@@ -77,6 +77,7 @@ class PostsController < ApplicationController
     	@results.each do |p|
     		puts "****************************************"
     		puts "Title: " + p.title
+            puts "Image url: " + rails_blob_path(p.feature_images[0], disposition: "attachment") if p.feature_images[0].present?
     		puts "Description: " + p.description.truncate(100)
     		puts "Url: " + post_path(p)
     	end
@@ -88,6 +89,7 @@ class PostsController < ApplicationController
     	@results.each do |p|
     		puts "****************************************"
     		puts "Title: " + p.title
+            puts "Image url: " + rails_blob_path(p.feature_images[0], disposition: "attachment") if p.feature_images[0].present?
     		puts "Description: " + p.description.truncate(100)
     		puts "Url: " + post_path(p)
     	end
@@ -122,6 +124,7 @@ class PostsController < ApplicationController
     	@results.each do |p|
     		puts "****************************************"
     		puts "Title: " + p.title
+            puts "Image url: " + rails_blob_path(p.feature_images[0], disposition: "attachment")
     		puts "Description: " + p.description.truncate(100)
     		puts "Url: " + post_path(p)
     	end
@@ -133,6 +136,7 @@ class PostsController < ApplicationController
     	@results.each do |p|
     		puts "****************************************"
     		puts "Title: " + p.title
+            puts "Image url: " + rails_blob_path(p.feature_images[0], disposition: "attachment")
     		puts "Description: " + p.description.truncate(100)
     		puts "Url: " + post_path(p)
     	end

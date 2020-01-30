@@ -7,6 +7,10 @@
 $su-blue: #083472;
 
 /* Bootstrap Overrides: SUpost */
+body {
+  font-family: 'Nunito', sans-serif!important; /* Override bootstrap reboot PT Sans */
+}
+
 .navbar {
 
 	.navbar-collapse {
@@ -243,7 +247,7 @@ h2 {
 	color: #87d37c;
 }
 .color-code {
-    color: #000000;
+  color: #000000;
 }
 .pd-2{
     padding:2%;
@@ -264,7 +268,7 @@ body{
     font-family: 'PT Sans', sans-serif;
 }
 h1,h2,h3,h4,h5,.lead,div[data-toggle="collapse"]{
-    font-family: 'Oswald', sans-serif;
+    /*font-family: 'Oswald', sans-serif;*/
 }
 ul li{
     list-style:one;

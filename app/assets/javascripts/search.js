@@ -28,4 +28,16 @@ $(document).ready(function(){
 
 	//$("input[data-behavior='autocomplete']").easyAutocomplete(options)
 	$("#term").easyAutocomplete(options)
+
+	//$(".easy-autocomplete").css({"min-width": "calc(100% - 76.7px)"});
+	/*$(".input-group > .easy-autocomplete > .form-control:not(:last-child)").css({
+		"border-top-right-radius": "0",
+		"border-bottom-right-radius": "0"
+	});
+	$(".input-group > .easy-autocomplete > .form-control").css({
+		"position": "relative",
+		"flex": "1 1",
+		"min-width": "0",
+		"margin-bottom": "0"
+	});*/
 });

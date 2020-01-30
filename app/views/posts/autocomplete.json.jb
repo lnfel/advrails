@@ -1,0 +1,20 @@
+# This is the preferred json renderer
+# in case this is not enabled
+# uncomment render 'search', formats: :json, handlers: 'jb' in posts#search
+# then comment render file: 'posts/search.json.jbuilder'
+
+@results.map {|p| 
+	{
+		title: p.title,
+		description: p.description.truncate(100),
+		url: post_path(p)
+	}
+}
+
+#@posts.each {|p|
+#	{
+#		title: p.title,
+#		description: p.description.truncate(100),
+#		url: post_path(p)
+#	}
+#}

@@ -6,6 +6,7 @@
 @results.map {|p| 
 	{
 		title: p.title,
+		feature_image: p.feature_images[0].present? ? rails_blob_path(p.feature_images[0], disposition: "attachment") : nil,
 		description: p.description.truncate(100),
 		url: post_path(p)
 	}

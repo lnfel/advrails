@@ -17,13 +17,14 @@ class Post < ApplicationRecord
   paginates_per 1
 
   # enable searchkick
-  searchkick word_middle: [:title, :description]
+  searchkick word_middle: [:title, :description, :feature_images]
   #Post.reindex
 
   def search_data
     {
       title: title,
-      description: description
+      description: description,
+      feature_image: feature_images[0]
     }
   end
 end

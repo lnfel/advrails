@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	#rescue_from ActiveRecord::RecordNotFound, with: :show_errors
+    #rescue_from ActiveRecord::RecordNotFound, with: :show_errors
 	before_action :set_post, only: [:show, :edit, :update, :destroy]
 
 	def index
@@ -70,16 +70,16 @@ class PostsController < ApplicationController
 
     search = params[:term].present? ? params[:term] : nil
 
-    @posts = if search
+    @posts = if search.present?
     	puts "Searching for " + "'" + search.to_s + "'"
-    	@results = Post.search(search, limit: 5, match: :word_middle)
+    	@results = Post.search(search, fields: [:title], limit: 5, match: :word_start, misspellings: {below: 1})
     	#puts @results.response
     	@results.each do |p|
     		puts "****************************************"
     		puts "Title: " + p.title
-            puts "Image url: " + rails_blob_path(p.feature_images[0], disposition: "attachment") if p.feature_images[0].present?
     		puts "Description: " + p.description.truncate(100)
     		puts "Url: " + post_path(p)
+        puts "Image url: " + rails_blob_path(p.feature_images[0], disposition: "attachment") if p.feature_images[0].present?
     	end
     	puts "Found " + @results.total_count.to_s + " result(s)"
     	puts "Finished in " + @results.took.to_s + " milliseconds"
@@ -89,12 +89,12 @@ class PostsController < ApplicationController
     	@results.each do |p|
     		puts "****************************************"
     		puts "Title: " + p.title
-            puts "Image url: " + rails_blob_path(p.feature_images[0], disposition: "attachment") if p.feature_images[0].present?
     		puts "Description: " + p.description.truncate(100)
     		puts "Url: " + post_path(p)
+        puts "Image url: " + rails_blob_path(p.feature_images[0], disposition: "attachment") if p.feature_images[0].present?
     	end
     	puts "Found " + @results.count.to_s + " records."
-    	puts @results.as_json(only: [:title, :description], include: {type: {only: [:id, :name]}})
+    	#puts @results.as_json(only: [:title, :description], include: {type: {only: [:id, :name]}})
     end
 
     #@posts = Post.search(params[:term])
@@ -119,14 +119,14 @@ class PostsController < ApplicationController
 
     @posts = if search
     	puts "Searching for " + "'" + search.to_s + "'"
-    	@results = Post.search(search, match: :word_middle)
+    	@results = Post.search(search, match: :word_start)
     	#puts @results.response
     	@results.each do |p|
     		puts "****************************************"
     		puts "Title: " + p.title
-            puts "Image url: " + rails_blob_path(p.feature_images[0], disposition: "attachment")
     		puts "Description: " + p.description.truncate(100)
     		puts "Url: " + post_path(p)
+        puts "Image url: " + rails_blob_path(p.feature_images[0], disposition: "attachment") if p.feature_images[0].present?
     	end
     	puts "Found " + @results.total_count.to_s + " result(s)"
     	puts "Finished in " + @results.took.to_s + " milliseconds"
@@ -136,9 +136,9 @@ class PostsController < ApplicationController
     	@results.each do |p|
     		puts "****************************************"
     		puts "Title: " + p.title
-            puts "Image url: " + rails_blob_path(p.feature_images[0], disposition: "attachment")
     		puts "Description: " + p.description.truncate(100)
     		puts "Url: " + post_path(p)
+        puts "Image url: " + rails_blob_path(p.feature_images[0], disposition: "attachment") if p.feature_images[0].present?
     	end
     	# if using Post.all, 'total_count' and 'took' method will not work since it is only scoped by elasticsearch
     	# in ActiveRecord we can use 'count' method

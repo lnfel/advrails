@@ -8,6 +8,9 @@
 		title: p.title,
 		feature_image: p.feature_images[0].present? ? rails_blob_path(p.feature_images[0], disposition: "attachment") : nil,
 		description: p.description.truncate(100),
+		type: Type.find_by(id: p.type_id).name,
+		category: Category.find_by(id: p.category_id).name,
+		time_distance: time_ago_in_words(p.created_at),
 		url: post_path(p)
 	}
 }

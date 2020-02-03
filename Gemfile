@@ -36,6 +36,7 @@ gem 'jquery-rails', '4.3.5'
 # Active Storage
 # Don't use mini_magick 4.5 due to high severity issue
 gem 'mini_magick', '4.9.4'
+gem "aws-sdk-s3", require: false
 
 # Text Markdown
 gem 'redcarpet', '3.5.0'

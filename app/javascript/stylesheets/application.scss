@@ -128,7 +128,7 @@ footer .copy span {
   font-size: .8rem;
 }
 
-footer .line::before {
+.line::before {
   content: "";
   position: absolute;
   bottom: -10px;

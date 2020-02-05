@@ -1,182 +1,175 @@
 <% provide(:title, "Create Post") %>
 
 <!-- Then put toasts within -->
-    <% if @post.errors.any? %>
-      <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header bg-danger text-light">
-          <!-- <img src="..." class="rounded mr-2" alt="..."> -->
-          <strong class="mr-auto"><i class="fas fa-exclamation-triangle"></i> Form error</strong    >
-          <small class="text-light">just now</small>
-          <button type="button" class="ml-2 mb-1 close text-light" data-dismiss="toast" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="toast-body">
-          <!-- <p><%#= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</p> -->
-          <!-- <ul class="list-group"> -->
-            <% @post.errors.full_messages.each do | message | %>
-              <li><%= message %></li>
-            <% end %>
-          <!-- </ul> -->
-        </div>
-      </div>
-    <% end %>
-
-    <!-- <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="toast-header">
-        <img src="..." class="rounded mr-2" alt="...">
-        <strong class="mr-auto">Bootstrap</strong>
-        <small class="text-muted">2 seconds ago</small>
-        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+  <% if @post.errors.any? %>
+    <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header bg-danger text-light">
+        <!-- <img src="..." class="rounded mr-2" alt="..."> -->
+        <strong class="mr-auto"><i class="fas fa-exclamation-triangle"></i> Form error</strong    >
+        <small class="text-light">just now</small>
+        <button type="button" class="ml-2 mb-1 close text-light" data-dismiss="toast" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="toast-body">
-        Heads up, toasts will stack automatically
+        <!-- <p><%#= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</p> -->
+        <!-- <ul class="list-group"> -->
+          <% @post.errors.full_messages.each do | message | %>
+            <li><%= message %></li>
+          <% end %>
+        <!-- </ul> -->
       </div>
-    </div> -->
-  </div>
+    </div>
+  <% end %>
+
+  <!-- <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="..." class="rounded mr-2" alt="...">
+      <strong class="mr-auto">Bootstrap</strong>
+      <small class="text-muted">2 seconds ago</small>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+      Heads up, toasts will stack automatically
+    </div>
+  </div> -->
+<!-- </div> -->
 <!-- </div> -->
 
-<section class="py-5">
-    <div class="container-fluid">
-        <div class="row ">
-         <div class="mr-5">
+<main class="container-fluid py-4">
+  <div class="row pb-4">
+    <div id="tipsHead" class="d-md-none text-info p-4" data-toggle="collapse" data-target="#tips" aria-expanded="false" aria-controls="tips">
+      <a href="#" class="text-decoration-none"><i class="fas fa-info"></i> Tips</a> <i class="fas fa-chevron-down"></i>
+    </div>
+    <section id="tips" class="collapse show col-12 col-md-4 text-center" aria-labelledby="tipsHead">
+      <img src="http://www.ansonika.com/mavia/img/registration_bg.svg" class="mb-4" style="width:30%">
+      <h4 class="mb-4">Post Guidelines</h4>
+      <p class="rounded breadcrumb text-left p-4">Tation argumentum et usu, dicit viderer evertitur te has. Eu dictas concludaturque usu, facete detracto patrioque an per, lucilius pertinacia eu vel.</p>
+      <p class="rounded breadcrumb text-left p-4">Tation argumentum et usu, dicit viderer evertitur te has.</p>
+
+      <h4 class="mb-4">We now support <i class="fab fa-markdown"></i> Markdown</h4>
+      <div class="rounded breadcrumb p-4 text-left">
+        <p class="">Add style to your post, for instance emphasize a word or sentence by wrapping it with double asterisk and making it bold.</p>
+        <p>Example: **bold** will render as <b>bold</b></p>
+        <p><a href="#">Learn more</a> how to make an efficient post using the markdown syntax.</p>
+      </div>
+    </section>
+    <section class="col-12 col-md-8">
+      <h2 class="position-relative d-inline-block line mb-4"><i class="fas fa-pencil-alt"></i> Create new post</h2>
+      <%= form_with(model: @post, local: true, multipart: true) do |f| %>
+        <!-- <div style="position: absolute; top: 15px; right: 15px; z-index: 3;">
+          <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+              <strong class="mr-auto">Bootstrap</strong>
+              <small class="text-muted">just now</small>
+              <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-            <div class="col-md-4 py-5 bg-light text-white text-center border">
-                <div class=" ">
-                    <div class="card-body">
-                        <img src="http://www.ansonika.com/mavia/img/registration_bg.svg" style="width:30%">
-                        <h4 class="color-code py-3">Post Guidelines</h4>
-                        <p class="color-code breadcrumb">Tation argumentum et usu, dicit viderer evertitur te has. Eu dictas concludaturque usu, facete detracto patrioque an per, lucilius pertinacia eu vel.
-                        </p>
-                        <p class="color-code breadcrumb">Tation argumentum et usu, dicit viderer evertitur te has.</p>
-                    </div>
+            <div class="toast-body">
+              sdfsfsdfsdfsdfsdfsd
+            </div>
+          </div>
+        </div> -->
+        <div class="form-row">
+          <!-- <div class="row">
+            <div class="col-12">
+              <%# if @post.errors.any? %>
+                <div id="error_explanation">
+                  <h3><%#= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h3>
+      
+                  <ul>
+                    <%# @post.errors.full_messages.each do | message | %>
+                      <li><%#= message %></li>
+                    <%# end %>
+                  </ul>
                 </div>
-                <div class=" ">
-                    <div class="card-body">
-                        <img src="https://www.svgrepo.com/show/244895/post.svg" style="width:30%">
-                        <h4 class="color-code py-3">Another Section</h4>
-                        <p class="color-code breadcrumb">Tation argumentum et usu, dicit viderer evertitur te has. Eu dictas concludaturque usu, facete detracto patrioque an per, lucilius pertinacia eu vel.
-                        </p>
-                    </div>
-                </div>
+              <%# end %>        
             </div>
-            <div class="mr-2">
+          </div> -->
+          <div class="form-group col-md-6">
+            <%= f.collection_select(:type_id, Type.all, :id, :name, {:include_blank => 'Type of post'}, class: "form-control", title: "Type of post") %>
+            <!-- <select class="form-control">
+              <option value="" disabled selected hidden>Type of post</option>
+              <optgroup label="Type of post">
+                <option>For sale</option>
+                <option>Personals</option>
+                <option>Housing (offering)</option>
+                <option>Housing (need)</option>
+                <option>Community</option>
+                <option>Service offered</option>
+                <option>Campus job</option>
+                <option>Job off-campus</option>
+              </optgroup>
+            </select> -->
+          </div>
+          <!--  -->
+          <div class="form-group col-md-6">
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {:include_blank => 'Category'}, class: "form-control", title: "Category") %>
+          <!-- <select class="form-control" disabled="">
+            <option value="" disabled selected hidden>Category</option>
+          </select>  -->
+          </div>
+          <div class="form-group col-md-6">
+            <%= f.text_field(:title, class: 'form-control', placeholder: 'Post Title') %>
+            <!-- <input type="text" name="" class="form-control" placeholder="Post Title"> -->
+          </div>
+          <div class="form-group col-md-6">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+              <%= f.number_field(:price, class: 'form-control', min: 0, step: ".1", style: 'border-radius: 0px 0.25rem 0.25rem 0px;', placeholder: 'Price') %>
+              <!-- <input type="number" name="" class="form-control" placeholder="Price"> -->
             </div>
-            <div class="col-md-7 py-5 border">
-                <h4 class="pb-4">Please fill post information</h4>
-               <%= form_with(model: @post, local: true, multipart: true) do |f| %>
-               <!-- <div style="position: absolute; top: 15px; right: 15px; z-index: 3;">
-                			<div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
-                				<div class="toast-header">
-                					<strong class="mr-auto">Bootstrap</strong>
-                					<small class="text-muted">just now</small>
-                					<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                						<span aria-hidden="true">&times;</span>
-                					</button>
-                				</div>
-                				<div class="toast-body">
-                					sdfsfsdfsdfsdfsdfsd
-                				</div>
-                			</div>
-                		</div> -->
-                    <div class="form-row">
-                        <!-- <div class="row">
-                    			<div class="col-12">
-                    				<%# if @post.errors.any? %>
-                    					<div id="error_explanation">
-                    						<h3><%#= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h3>
-                    
-                    						<ul>
-                    							<%# @post.errors.full_messages.each do | message | %>
-                    								<li><%#= message %></li>
-                    							<%# end %>
-                    						</ul>
-                    					</div>
-                    				<%# end %>				
-                    			</div>
-                    		</div> -->
-                			<div class="form-group col-md-6">
-                				<%= f.collection_select(:type_id, Type.all, :id, :name, {:include_blank => 'Type of post'}, class: "form-control", title: "Type of post") %>
-                				<!-- <select class="form-control">
-                					<option value="" disabled selected hidden>Type of post</option>
-                					<optgroup label="Type of post">
-                						<option>For sale</option>
-                						<option>Personals</option>
-                						<option>Housing (offering)</option>
-                						<option>Housing (need)</option>
-                						<option>Community</option>
-                						<option>Service offered</option>
-                						<option>Campus job</option>
-                						<option>Job off-campus</option>
-                					</optgroup>
-                				</select> -->
-                			</div>
-                			<!--  -->
-                        <div class="form-group col-md-6">
-                				<%= f.collection_select(:category_id, Category.all, :id, :name, {:include_blank => 'Category'}, class: "form-control", title: "Category") %>
-                				<!-- <select class="form-control" disabled="">
-                					<option value="" disabled selected hidden>Category</option>
-                				</select>	 -->
-                        </div>
-                        <div class="form-group col-md-6">
-                                  
-                                  <%= f.text_field(:title, class: 'form-control', placeholder: 'Post Title') %>
-                    				<!-- <input type="text" name="" class="form-control" placeholder="Post Title"> -->
-                        </div>
-                        <div class="form-group col-md-6">
-                            <div class="input-group">
-            					<div class="input-group-prepend">
-            						<span class="input-group-text">$</span>
-            					</div>
-            					<%= f.number_field(:price, class: 'form-control', min: 0, step: ".1", style: 'border-radius: 0px 0.25rem 0.25rem 0px;', placeholder: 'Price') %>
-            					<!-- <input type="number" name="" class="form-control" placeholder="Price"> -->
-            				</div>
-        				</div>
-                        <div class="form-group col-md-12">
-                                  <%= f.text_area(:description, class: 'form-control', rows: '5', placeholder: 'Post Description') %>
-                    				<!-- <textarea class="form-control" rows="5" placeholder="Post Description"></textarea> -->
-                        </div>
-                         <div class="form-group col-md-12">
-                            <div class="input-group">
-        					<%= f.email_field(:email, class: 'form-control', style: 'border-radius: 0.25rem 0px 0px 0.25rem;', placeholder: 'Your stanford email') %>
-        					<!-- <input type="email" name="" class="form-control" placeholder="Your stanford email"> -->
-        					<div class="input-group-append">
-        						<select name="email_domain" class="form-control">
-        							<option class="selected" value="@stanford.edu">@stanford.edu</option>
-        							<option value="@alumni.stanford.edu">@alumni.stanford.edu</option>
-        							<option value="@stanfordalumni.org">@stanfordalumni.org</option>
-        						</select>
-        					</div>
-        					</div>
-        				</div>
-        				<div class="form-group col-md-12 text-muted">
-                            <small>Valid emails are @standford.edu, @alumni.standford.edu and @standfordalumni.org</small>
-                            <p><small>We need your email to send the self-publishing link. This email will not be visible on the website.</small></p>
-                        </div>
-                        <div class="form-group col-md-12">
-                        	<%= f.label :feature_images, class: 'label' %>
-                				<div class="dropzone dropzone-default dz-clickable rounded" data-controller="dropzone" data-dropzone-max-file-size="2" data-dropzone-max-files="4">
-                					<%= f.file_field :feature_images, class: 'border rounded', direct_upload: true, multiple: true, data: { target: 'dropzone.input' } %>
-                					<div class="dropzone-msg dz-message needsclick text-gray-600">
-                			      <h3 class="dropzone-msg-title">Drag here to upload or click here to browse</h3>
-                			      <span class="dropzone-msg-desc text-sm">You can upload up to 4 image files. 2 MB file size maximum. Allowed file types png, jpg.</span>
-                			     </div>
-                				</div>
-                				<!-- <div class="custom-file"> -->
-                					<%#= f.file_field :feature_images, class: 'custom-file-input', multiple: true %>
-                				  <!-- <input type="file" class="custom-file-input" id="customFile" multiple> -->
-                				  <!-- <label class="custom-file-label" for="post_feature_images" data-browse="Choose File(s)">Photo(s)</label> -->
-                				<!-- </div> -->
-                				<!-- <small class="text-muted">
-                					You can upload up to 4 image files.
-                				</small> -->
-                		</div>
-                		    <div class="form-inline pl-1">
-                    			<input type="submit" name="" class="btn btn-success mr-2" value="Preview">
-                    			<input type="submit" name="" class="btn btn-success" value="Post">
-                    		</div>
-                    </div>
-            <% end %>
-</section>
+          </div>
+          <div class="form-group col-md-12">
+            <%= f.text_area(:description, class: 'form-control', rows: '5', placeholder: 'Post Description') %>
+            <!-- <textarea class="form-control" rows="5" placeholder="Post Description"></textarea> -->
+          </div>
+          <div class="form-group col-md-12">
+            <div class="input-group">
+              <%= f.email_field(:email, class: 'form-control', style: 'border-radius: 0.25rem 0px 0px 0.25rem;', placeholder: 'Your stanford email') %>
+              <!-- <input type="email" name="" class="form-control" placeholder="Your stanford email"> -->
+              <div class="input-group-append">
+                <select name="email_domain" class="form-control">
+                  <option class="selected" value="@stanford.edu">@stanford.edu</option>
+                  <option value="@alumni.stanford.edu">@alumni.stanford.edu</option>
+                  <option value="@stanfordalumni.org">@stanfordalumni.org</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-12 text-muted">
+            <small>Valid emails are @standford.edu, @alumni.standford.edu and @standfordalumni.org</small>
+            <p><small>We need your email to send the self-publishing link. This email will not be visible on the website.</small></p>
+          </div>
+          <div class="form-group col-md-12">
+            <%= f.label :feature_images, class: 'label' %>
+            <div class="dropzone dropzone-default dz-clickable rounded" data-controller="dropzone" data-dropzone-max-file-size="2" data-dropzone-max-files="4">
+            <%= f.file_field :feature_images, class: 'border rounded', direct_upload: true, multiple: true, data: { target: 'dropzone.input' } %>
+              <div class="dropzone-msg dz-message needsclick text-gray-600">
+                <h3 class="dropzone-msg-title">Drag here to upload or click here to browse</h3>
+                <span class="dropzone-msg-desc text-sm">You can upload up to 4 image files. 2 MB file size maximum. Allowed file types png, jpg.</span>
+              </div>
+            </div>
+            <!-- <div class="custom-file"> -->
+              <%#= f.file_field :feature_images, class: 'custom-file-input', multiple: true %>
+              <!-- <input type="file" class="custom-file-input" id="customFile" multiple> -->
+              <!-- <label class="custom-file-label" for="post_feature_images" data-browse="Choose File(s)">Photo(s)</label> -->
+            <!-- </div> -->
+            <!-- <small class="text-muted">
+              You can upload up to 4 image files.
+            </small> -->
+          </div>
+          <div class="form-inline pl-1">
+            <input type="submit" name="" class="btn btn-success mr-2" value="Preview">
+            <input type="submit" name="" class="btn btn-success" value="Post">
+          </div>
+        </div>
+      <% end %>
+    </section>
+  </div>
+</main>

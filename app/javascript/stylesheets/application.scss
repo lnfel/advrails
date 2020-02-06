@@ -111,10 +111,8 @@ body {
   position: -webkit-sticky;
   position: sticky;
   top: 15px;
-<<<<<<< HEAD
-=======
   z-index: 10; /* important on mobile browser to prevent accordion extending outside the top edge off the screen */
->>>>>>> 22ecb4a0b4e2756267da3fd2cd5879eb73a2cccc
+
 }
 
 /* Footer */
@@ -249,6 +247,7 @@ h2 {
 .color-code {
   color: #000000;
 }
+
 .pd-2{
     padding:2%;
 }
@@ -265,8 +264,10 @@ h2 {
     padding-bottom:2%;
 }
 body{
+    
     font-family: 'PT Sans', sans-serif;
 }
+
 h1,h2,h3,h4,h5,.lead,div[data-toggle="collapse"]{
     /*font-family: 'Oswald', sans-serif;*/
 }

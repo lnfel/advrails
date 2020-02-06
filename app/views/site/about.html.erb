@@ -1,33 +1,53 @@
 <% provide(:title, "About") %>
 
-<section class="container-fluid bg-3 text-center mb-5 mt-5 pb-5">
-  <div class="row">
-    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-        <figure class="rounded p-3 bg-white shadow-sm">
-          <%= image_tag("greg.png", class: "img-fluid img card-img-top") %>
-              <figcaption class="p-4 card-img-bottom">
-                <h2 class="h5 font-weight-bold mb-2 font-italic">Greg Wientjes</h2>
-                <p class="mb-0 text-small text-muted font-italic">CEO-Founder</p>
-                <p class="mb-0 text-small text-muted font-italic">PhD, MS and BS, all from Stanford University.</p>
-              </figcaption>
-        </figure>
-      </div>
-    <div class="col-12 col-md-8">
-      <div class="bg-white rounded shadow-sm py-5 px-4 mr-4 ml-4">
-        <h1 class="mb-4">About SUpost</h1>
-        <p class="text-justify"> Welcome to SUpost. I built SUpost to enable Stanford students and staff to buy and sell their stuff. 
-      SUpost requires an @stanford.edu email in order to post. So, you can be sure that all items posted on SUpost are from people affiliated with Stanford. 
-      (The only exception to this email restriction is in the off-campus jobs section, in which anyone can post a job for a fee -- to help us cover the costs of operation.)
-        <p class="text-justify">SUpost is the #1 marketplace at Stanford! SUpost gets over 1,000,000 page views per month from Stanford students, alumni, staff and faculty. 
-      Need to find housing? Check out the SUpost housing listings. Got something to sell? Post it! Looking to sublet your apartment? Post it! Need a bike for your ride to class through campus? Post it! Post it! 
-      Tell everyone you know at Stanford to post one item they want to sell on SUpost, and watch this site continue to be an incredibly useful resource at Stanford. </p>
-        </p>
-        <p class="text-justify">Greg Wientjes</p>
-      </div>
-    </div>
-  </div>
-</section>
- <hr class="mr-5 ml-5 pb-5">
+      <section class="container-fluid bg-3 text-center">
+      <div class="row">
+      <div class="col-12 col-md-10 mx-auto mb-5">
+        <div class="profile-card py-3 card">
+                <div class="card-body px-4 px-md-3 py-3">
+                    <div class="row">
+                        <div class="col-12 col-md-5 pr-lg-3 justify-content-center">
+                            <div class="px-4 mb-4">
+                                <img class="profile-picture d-block mx-auto rounded-circle mb-4" src="https://media-exp1.licdn.com/dms/image/C5603AQGiEIcY6fsEPQ/profile-displayphoto-shrink_200_200/0?e=1585785600&v=beta&t=NQWfQIa6cdNsGs18rUPa1yS2H8l13AJhm3pZ7P1JXKk" /> 
+                                  <p class="text-muted text-uppercase font-weight-bold">
+                                    Greg Wientjes
+                                </p>
+                                    <p class="mt-1 small text-secondary">
+                                        CEO-Founder<br>
+                                        PhD, MS and BS, all from Stanford University.
+                                    </p>    
+                                <div class="d-flex mt-2 pt-1 social-section justify-content-center align-items-center">
+                                    <a class="text-warning" href=""><i class="fab fa-instagram"></i></a>
+                                    <a class="text-warning" href=""><i class="fab fa-facebook"></i></a>
+                                    <a class="text-warning" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="text-warning" href=""><i class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-7 pl-md-0 pl-lg-0">
+                            <div class="text-center mb-4 mb-md-1 text-md-left px-4 px-md-0">
+                                <h2 class="text-info h5 font-weight-bold mt-0 mb-0">
+                                    About SUpost
+                                </h2>
+                                <p class="mt-1 small text-secondary px-auto text-justify">
+                                     Welcome to SUpost. I built SUpost to enable Stanford students and staff to buy and sell their stuff. 
+                                      SUpost requires an @stanford.edu email in order to post. So, you can be sure that all items posted on SUpost are from people affiliated with Stanford. 
+                                      (The only exception to this email restriction is in the off-campus jobs section, in which anyone can post a job for a fee -- to help us cover the costs of operation.)</p>
+                                        <p class="mt-1 small text-secondary px-auto text-justify">SUpost is the #1 marketplace at Stanford! SUpost gets over 1,000,000 page views per month from Stanford students, alumni, staff and faculty. 
+                                      Need to find housing? Check out the SUpost housing listings. Got something to sell? Post it! Looking to sublet your apartment? Post it! Need a bike for your ride to class through campus? Post it! Post it! 
+                                      Tell everyone you know at Stanford to post one item they want to sell on SUpost, and watch this site continue to be an incredibly useful resource at Stanford.
+                                </p>
+                                <p class="mt-1 small text-secondary">
+                                        Greg Wientjes
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </section>
     <section>
         <div class="container pb-5 pt-5 pl-5">
             <div class="row justify-content-center text-center mb-5">
@@ -65,7 +85,7 @@
 <h1 class="mr-4 ml-4 mb-5">The SUpost Team</h1>
 <div class="row mr-2 ml-2">
     <div class="col-lg-6 mb-4 pb-5">
-        <%= image_tag("man1.jpeg", class: "rounded-circle") %>
+        <%= image_tag("man1.jpg", class: "rounded-circle") %>
         <h2 class="pt-2">Greg Wientjes</h2>
         <p>CEO-Founder </p>
             <div>

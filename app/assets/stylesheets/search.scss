@@ -51,24 +51,40 @@
 .easy-autocomplete-container > ul {
   /*top: 20px;*/
   border: 1px solid #ced4da;
-  border-radius: .25rem;
+  /*border-radius: .25rem;*/
 }
 
 .easy-autocomplete-container ul li {
 	border: none;
 	font-size: 1.2rem;
+  padding: 0px;
+}
+
+.easy-autocomplete-container ul li:not(:last-child) {
+  margin-bottom: .25rem;
+  border-bottom: 2px dashed gray;
 }
 
 .easy-autocomplete-container ul li.selected {
   background: none repeat scroll 0 0 #007bff;
   color: #fff;
   cursor: pointer;
+  border-bottom: 2px solid #007bff;
 }
 
 .easy-autocomplete-container ul li b {
 	/*color: #ffc107;*/
 	color: #28a745; /*#28a745*/
 	font-weight: 900;
+}
+
+.easy-autocomplete-container ul li .time-distance {
+  font-size: .8rem;
+  color: #6c757d;
+}
+
+.easy-autocomplete-container ul li.selected .time-distance {
+  color: #fff;
 }
 
 .easy-autocomplete-container ul li.selected b {
@@ -78,3 +94,14 @@
 	-webkit-text-stroke-width: 1px;
 	-webkit-text-stroke-color: white;*/
 }
+
+/*.text-truncate {
+  -webkit-box-flex: 1;
+  flex: 1;
+}
+
+.text-truncate, .text-truncate > * {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}*/

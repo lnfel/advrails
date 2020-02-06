@@ -92,15 +92,16 @@ $(document).on("turbolinks:load", function() {
 
   // if turbolinks is enabled scripts must be wrapped
   // inside turbolinks:load listener function
-  $("div[data-toggle='collapse']").click(function(){
-    $(this).children('.fa').toggleClass("fa-chevron-down fa-chevron-up");
+  $("div[data-toggle='collapse']").click(function(e){
+    e.preventDefault();
+    $(this).children('.fas').toggleClass("fa-chevron-down fa-chevron-up");
   });
 });
 
 $(function(){
   //$(".chevron-down").
   //this one will not work
-  $("div[data-toggle='collapse']").click(function(){
-    $(this).children('span').toggleClass("fa-chevron-down fa-chevron-up");
-  });
+  //$("div[data-toggle='collapse']").click(function(){
+  //  $(this).children('span').toggleClass("fa-chevron-down fa-chevron-up");
+  //});
 })

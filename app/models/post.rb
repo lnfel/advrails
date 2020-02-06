@@ -17,14 +17,16 @@ class Post < ApplicationRecord
   paginates_per 1
 
   # enable searchkick
-  searchkick word_middle: [:title, :description, :feature_images]
-  #Post.reindex
+  searchkick word_start: [:title]
+  # Post.reindex doesn't work here
+  # instead run `elasticsearch` on another console then do the following code in the console afterwards:
+  # rails run searchkick:reindex CLASS=Post
 
-  def search_data
-    {
-      title: title,
-      description: description,
-      feature_image: feature_images[0]
-    }
-  end
+  #def search_data
+  #  {
+  #    title: title,
+  #    description: description,
+  #    feature_image: feature_images[0]
+  #  }
+  #end
 end

@@ -126,7 +126,7 @@ footer .copy span {
   font-size: .8rem;
 }
 
-footer .line::before {
+.line::before {
   content: "";
   position: absolute;
   bottom: -10px;
@@ -275,13 +275,13 @@ ul li{
     list-style:one;
 }
 div[data-toggle="collapse"]{
-   border-bottom:1px solid #BBDEFB;
+   /*border-bottom:1px solid #BBDEFB;*/
    width:100%;
    cursor:pointer;
    padding:1%;
 }
 .collapse{
-    background:#F5F5F5;
+    /*background:#F5F5F5;*/
 }
 .right-icon-pos {
     position: absolute;

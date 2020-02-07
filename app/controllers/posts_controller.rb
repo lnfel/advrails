@@ -164,13 +164,15 @@ class PostsController < ApplicationController
   private
 
   	def set_post
-    @post = Post.with_attached_feature_images.find_by!(id: params[:id])
+      @post = Post.with_attached_feature_images.find_by!(id: params[:id])
+      @author_email = @post.email
+      #Rails.logger.info @author_email
 
-    # https://stackoverflow.com/questions/2336593/rescue-from-activerecordrecordnotfound-in-rails
-    rescue ActiveRecord::RecordNotFound
+      # https://stackoverflow.com/questions/2336593/rescue-from-activerecordrecordnotfound-in-rails
+      rescue ActiveRecord::RecordNotFound
     	flash[:notice] = "Try searching again or use the category list."
-  			redirect_to :action => 'index'
-  end
+  		redirect_to :action => 'index'
+    end
 
   	def post_params
   		params.require(:post).permit(:type_id, :category_id, :title, :price, :description, :email, :feature_images)

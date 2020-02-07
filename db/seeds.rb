@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
+
 type_list = [
 	"For sale or Wanted",
 	"Personals",
@@ -72,10 +74,27 @@ category_list = [
 ]
 
 type_list.each do | name |
-	Type.create( name: name )
+	Type.create(name: name)
 end
 
 category_list.each do | type, name |
-	Category.find_or_create_by( type_id: Type.find_by( name: type ).id, name: name )
+	Category.find_or_create_by(type_id: Type.find_by( name: type ).id, name: name)
 end
 
+10.times do |i|
+	type = Faker::Number.within(range: 1..8)
+	cat_length = Category.where(type_id: type).length
+	category = Faker::Number.between(from: 1, to: cat_length)
+	price = Faker::Commerce.price(range: 100..5000)
+	paragraphs = Faker::Number.within(range: 1..3)
+	description = Faker::Lorem.paragraphs(number: paragraphs)
+	Post.create(type_id: type, category_id: category, title: Faker::Book.title, price: price, description: description, email: Faker::Internet.email)
+end
+
+#3.times do |i|
+#	post_id = i
+#	filename = i.to_s + '.jpg'
+#	post = Post.find_by(id: post_id)
+#	post.update(feature_images: Rails.root + '/assets/images/' + filename)
+	#post.feature_images.attach(io: File.open('/assets/images/'), filename: filename)
+#end

@@ -99,9 +99,19 @@ $(document).on("turbolinks:load", function() {
 });
 
 $(function(){
-  //$(".chevron-down").
-  //this one will not work
-  //$("div[data-toggle='collapse']").click(function(){
-  //  $(this).children('span').toggleClass("fa-chevron-down fa-chevron-up");
-  //});
+  var documentEl = $(document),
+    fadeElem = $('.fade-scroll');
+    
+    documentEl.on('scroll', function(){
+        var currScrollPos = documentEl.scrollTop();
+        
+        fadeElem.each(function(){
+            
+            var $this = $(this),
+                elemOffsetTop = $this.offset().top;
+            
+            if(currScrollPos > elemOffsetTop) $this.css('opacity', 1 -(currScrollPos-elemOffsetTop)/400);    
+        })
+        
+    })
 })

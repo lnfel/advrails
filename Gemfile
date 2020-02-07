@@ -37,15 +37,14 @@ gem 'jquery-rails', '4.3.5'
 # Don't use mini_magick 4.5 due to high severity issue
 gem 'mini_magick', '4.9.4'
 gem "aws-sdk-s3", require: false
-
 # Text Markdown
 gem 'redcarpet', '3.5.0'
-
 # Pagination
 gem 'kaminari', '1.1.1'
-
 # Global Search
 gem 'searchkick', '4.2.1'
+# Faker
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
 group :development, :test do
 	# Use sqlite3 as the database for Active Record

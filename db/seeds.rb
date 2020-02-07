@@ -78,3 +78,4 @@ end
 category_list.each do | type, name |
 	Category.find_or_create_by( type_id: Type.find_by( name: type ).id, name: name )
 end
+

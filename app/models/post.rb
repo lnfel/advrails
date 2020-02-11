@@ -3,6 +3,7 @@ class Post < ApplicationRecord
 	belongs_to :type, optional: true
   has_and_belongs_to_many :category
   has_many_attached :feature_images
+  has_many :message
 
   validates :type_id, presence: true
   validates :category_id, presence: true

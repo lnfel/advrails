@@ -6,6 +6,7 @@
 @results.map {|p| 
 	{
 		title: p.title,
+		email: p.email,
 		feature_image: p.feature_images[0].present? ? rails_blob_path(p.feature_images[0], disposition: "attachment") : nil,
 		description: p.description.truncate(100),
 		type: Type.find_by(id: p.type_id).name,

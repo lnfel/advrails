@@ -65,4 +65,7 @@ Rails.application.configure do
   # setup mailcatcher, this fakes sending smtp email using port 1025
   #config.action_mailer.delivery_method = :smtp
   #config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+
+  # https://github.com/rails/rails/issues/33500
+  #config.active_job.queue_adapter = :inline
 end

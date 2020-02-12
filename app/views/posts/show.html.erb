@@ -88,10 +88,19 @@
               <div class="col-12 col-md-6">
                 <h4>Reserve</h4>
                 <h4>Message</h4>
-                <form>
-                  <textarea class="form-control mb-4" name="" rows="5" placeholder="Send a message..."></textarea>
-                  <input type="submit" class="btn btn-success" name="" value="Send">
-                </form>
+                <%= form_with(model: @message, url: "/messages", method: "post") do |f| %>
+                  <%= f.hidden_field(:post_id, value: params[:id]) %>
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text text-primary"><i class="fas fa-envelope"></i></span>
+                    </div>
+                    <%= f.email_field(:sender_email, class: 'form-control', placeholder: 'Email') %>
+                  </div>
+                  <!-- <textarea class="form-control mb-4" name="" rows="5" placeholder="Send a message..."></textarea> -->
+                  <%= f.text_area(:message_body, class: 'form-control mb-4', rows: '5', placeholder: 'Send a message...') %>
+                  <!-- <input type="submit" class="btn btn-success" name="" value="Send"> -->
+                  <%= submit_tag "Send", class: "btn btn-success" %>
+                <% end %>
               </div>
             </div>
 

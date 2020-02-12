@@ -13,7 +13,7 @@ $(document).on("turbolinks:load", function() {
   $('[data-toggle="popover"]').popover();
 
   // Validate fileUpload
-  $("input[type = 'submit']").click(function(){
+  $("input[type = 'submit'][value='Post']").click(function(){
   	var $fileUpload = $("input[type='file']");
   	if (parseInt($fileUpload.get(0).files.length) > 4){
       alert("You are only allowed to upload a maximum of 4 files");

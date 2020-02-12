@@ -90,6 +90,7 @@
                 <h4>Message</h4>
                 <%= form_with(model: @message, url: "/messages", method: "post") do |f| %>
                   <%= f.hidden_field(:post_id, value: params[:id]) %>
+                  <%= hidden_field(:post, :email) %>
                   <div class="input-group mb-2">
                     <div class="input-group-prepend">
                       <span class="input-group-text text-primary"><i class="fas fa-envelope"></i></span>

@@ -55,7 +55,7 @@ class PostsController < ApplicationController
   end
 
   def show
-  	
+  	@message = Message.new()
   end
 
   def autocomplete

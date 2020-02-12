@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get :search, controller: :posts
   get :autocomplete, controller: :posts
 
+  resources :messages, only: [:create]
+
   # for typeahead but is not working due to bloodhound 
   #resources :posts do
   #  collection do

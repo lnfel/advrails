@@ -17,7 +17,7 @@
       <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header bg-success text-light">
           <!-- <img src="..." class="rounded mr-2" alt="..."> -->
-          <strong class="mr-auto"><i class="fas fa-check-square"></i> Yay!</strong>
+          <strong class="mr-auto"><i class="fas fa-check"></i> Yay!</strong>
           <!-- <small class="text-light">just now</small> -->
           <button type="button" class="ml-2 mb-1 close text-light" data-dismiss="toast" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -30,6 +30,27 @@
               <!-- <li><%#= message %></li> -->
             <%# end %>
           <!-- </ul> -->
+        </div>
+      </div>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header bg-danger text-light">
+          <!-- <img src="..." class="rounded mr-2" alt="..."> -->
+          <strong class="mr-auto"><i class="fas fa-times"></i> Message send Failed!</strong>
+          <!-- <small class="text-light">just now</small> -->
+          <button type="button" class="ml-2 mb-1 close text-light" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="toast-body">
+          <%#= flash[:error] %>
+          <ul class="list-group">
+            <% @message.errors.full_messages.each do | message | %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
         </div>
       </div>
     <% end %>

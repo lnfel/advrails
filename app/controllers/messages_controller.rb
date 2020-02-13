@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
 				format.html { redirect_to post_path(@message.post_id), notice: 'Message sent!' }
 				format.json { render :show, status: :created, location: @post }
 			else
-				format.html { render :new }
+				format.html { redirect_to post_path(@message.post_id), alert: 'Message send failed!' }
 				format.json { render json: @message.errors, status: :unprocessable_entity }
 			end
 		end

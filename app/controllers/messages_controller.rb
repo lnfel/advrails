@@ -5,7 +5,10 @@ class MessagesController < ApplicationController
 
 		respond_to do |format|
 			if @message.save
-				UserMailer.with(message: @message).send_email_to_author.deliver_later
+				# Sends email when message is created.
+				#UserMailer.with(message: @message).send_email_to_author.deliver_later
+				UserMailer.send_email_to_author(@message).deliver_later
+
 				format.html { redirect_to post_path(@message.post_id), notice: 'Message sent!' }
 				format.json { render :show, status: :created, location: @post }
 			else

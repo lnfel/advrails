@@ -68,4 +68,17 @@ Rails.application.configure do
 
   # https://github.com/rails/rails/issues/33500
   #config.active_job.queue_adapter = :inline
+
+  # ActionMailer config for development
+  #config.action_mailer.delivery_method = :smtp
+  #host = 'localhost:3000'
+  #config.action_mailer.default_url_options = { :host => 'localhost:3000', protocol: 'http' }
+  #config.action_mailer.smtp_settings = {
+  #  :address              => 'smtp.sendgrid.net',
+  #  :port                 => 587,
+  #  :user_name            => Rails.application.credentials.dig(:sendgrid, :user_name),
+  #  :password             => Rails.application.credentials.dig(:sendgrid, :password),
+  #  :authentication       => 'plain',
+  #  :enable_starttls_auto => true
+  #}
 end

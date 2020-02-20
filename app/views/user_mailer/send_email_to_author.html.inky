@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <container>
+      <row>
+        <columns small="12"><%= image_tag("su-light.png", :height => "100px", :class => "text-center") %></columns>
+      </row>
+      <row>
+        <columns small="12"><p class="text-center"><%= @message.message_body %></p></columns>
+      </row>
+      <p><%= @message.sender_email %></p>
+      <button href="http://zurb.com">Button</button>
+    </container>
+  </body>
+</html>

@@ -8,15 +8,48 @@
   </head>
 
   <body>
-    <container>
-      <row>
-        <columns small="12"><%= image_tag("su-light.png", :height => "100px", :class => "text-center") %></columns>
-      </row>
-      <row>
-        <columns small="12"><p class="text-center"><%= @message.message_body %></p></columns>
-      </row>
-      <p><%= @message.sender_email %></p>
-      <button href="http://zurb.com">Button</button>
-    </container>
+    <wrapper>
+      <container>
+        <row>
+          <columns small="4">
+            <%= image_tag("su-light.png", :height => "100px", :class => "text-center") %>
+          </columns>
+        </row>
+        <row>
+          <columns>
+            <%= image_tag("email-banner.jpg", :height => "", :class => "text-center") %>
+          </columns>
+        </row>
+        <row>
+          <columns>
+            <p class="lead">Hi <%= @post.email %>,</p>
+            <spacer size="20px"></spacer>
+            <p class="paragraph">It seems that somebody took notice of your recent post regarding <b><%= @post.title %></b> and decided to send you a message. The message as follows:</p>
+
+            <spacer size="20px"></spacer>
+            <p class="lead"><blockquote class="paragraph"><%= @message.message_body %></blockquote></p>
+            <button href="http://zurb.com" class="expanded success radius" bgcolor="#28a745">Reply</button>
+            <p class="text-center">You are about to reply with: <b><%= @message.sender_email %></b></p>
+
+            <spacer size="20px"></spacer>
+            <p class="paragraph">Your email might have been used to post on your behalf, if you don't remember posting anything or allowing someone to use your email as contact reference on SUpost marketplace. Please let us know by clicking <a href="">this link</a> and we will remove your email on the notification list.</p>
+          </columns>
+        </row>
+      </container>
+      <spacer size="50px"></spacer>
+      <container bgcolor="#f3f3f3">
+        <row>
+          <columns>
+            <p class="lead text-center">Connect with us</p>
+            <p class="text-center">some media icons around here</p>
+
+            <spacer size="20px"></spacer>
+            <%= image_tag("su-light.png", :height => "70px", :class => "text-center") %>
+            <p class="text-center">Stanford, California</p>
+            <p class="text-center"><a href="">Legal</a> • <a href="">Privacy</a></p>
+          </columns>
+        </row>
+      </container>
+    </wrapper>
   </body>
 </html>

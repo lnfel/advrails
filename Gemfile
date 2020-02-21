@@ -45,6 +45,10 @@ gem 'kaminari', '1.1.1'
 gem 'searchkick', '4.2.1'
 # Faker
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+# Foundation for Emails
+gem 'inky-rb', require: 'inky'
+# Stylesheet inlining for email
+gem 'premailer-rails'
 
 group :development, :test do
 	# Use sqlite3 as the database for Active Record

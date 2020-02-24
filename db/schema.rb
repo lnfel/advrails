@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(version: 2020_02_06_081708) do
   create_table "posts", force: :cascade do |t|
     t.integer "type_id", null: false
     t.integer "category_id", null: false
-    t.integer "message_id"
     t.string "title"
     t.decimal "price"
     t.text "description"
@@ -70,7 +69,6 @@ ActiveRecord::Schema.define(version: 2020_02_06_081708) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_posts_on_category_id"
-    t.index ["message_id"], name: "index_posts_on_message_id"
     t.index ["type_id"], name: "index_posts_on_type_id"
   end
 
@@ -88,7 +86,6 @@ ActiveRecord::Schema.define(version: 2020_02_06_081708) do
   add_foreign_key "categories", "posts"
   add_foreign_key "categories", "types"
   add_foreign_key "posts", "categories"
-  add_foreign_key "posts", "messages"
   add_foreign_key "posts", "types"
   add_foreign_key "types", "categories"
   add_foreign_key "types", "posts"

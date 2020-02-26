@@ -7,6 +7,7 @@ $(document).on("turbolinks:load", function() {
   console.log("Dev log: script loaded!");
   $('[data-toggle="tooltip"]').tooltip();
   // Initialize toast notifications / alerts
+  //$('.toast').toast({ autohide: false });
   $('.toast').toast({ delay: 2000 });
   $('.toast').toast('show');
 
@@ -20,18 +21,28 @@ $(document).on("turbolinks:load", function() {
   	}
 	});
 
+  // Initialize invalid classes on turbolinks load
+  $('.field_with_errors input').addClass('is-invalid');
+  $('.field_with_errors select').addClass('is-invalid');
+  //$('.field_with_errors #post_category_id').addClass('is-invalid'); // this one is required
+  $('.field_with_errors textarea:first').addClass('is-invalid');
+
   // Cacading select, Dependent dropdown, Dynamic form select
   // https://fool-dev.com/how-to-create-a-dependent-dropdown-in-ruby-on-rails/
   $("#post_category_id").prop("disabled", true); // disable category select while type select is empty
   // Listen for value change in Type select
   $("#post_type_id").change( function(){
     var type = $(this).val();
-    console.log(type);
 
     if(type == ''){
       $("#post_category_id").prop("disabled", true);
     }else{
       $("#post_category_id").prop("disabled", false);
+      typeTxt = $("#post_type_id option:selected").html();
+      typeTxt == "Personals" ? $("#post_price").parent(".input-group").addClass("d-none") : $("#post_price").parent(".input-group").removeClass("d-none");
+      /*if(typeTxt !== "Personals"){
+        $("#post_price").parent(".input-group").removeClass("d-none");
+      }*/
     }
 
     $.ajax({

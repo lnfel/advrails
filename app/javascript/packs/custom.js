@@ -33,12 +33,16 @@ $(document).on("turbolinks:load", function() {
   // Listen for value change in Type select
   $("#post_type_id").change( function(){
     var type = $(this).val();
-    console.log(type);
 
     if(type == ''){
       $("#post_category_id").prop("disabled", true);
     }else{
       $("#post_category_id").prop("disabled", false);
+      typeTxt = $("#post_type_id option:selected").html();
+      typeTxt == "Personals" ? $("#post_price").parent(".input-group").addClass("d-none") : $("#post_price").parent(".input-group").removeClass("d-none");
+      /*if(typeTxt !== "Personals"){
+        $("#post_price").parent(".input-group").removeClass("d-none");
+      }*/
     }
 
     $.ajax({

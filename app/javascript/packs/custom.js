@@ -7,8 +7,8 @@ $(document).on("turbolinks:load", function() {
   console.log("Dev log: script loaded!");
   $('[data-toggle="tooltip"]').tooltip();
   // Initialize toast notifications / alerts
-  $('.toast').toast({ autohide: false });
-  //$('.toast').toast({ delay: 2000 });
+  //$('.toast').toast({ autohide: false });
+  $('.toast').toast({ delay: 2000 });
   $('.toast').toast('show');
 
   $('[data-toggle="popover"]').popover();
@@ -22,9 +22,9 @@ $(document).on("turbolinks:load", function() {
 	});
 
   // Initialize invalid classes on turbolinks load
-  $('.field_with_errors input:first').addClass('is-invalid');
-  $('.field_with_errors select:first').addClass('is-invalid');
-  $('.field_with_errors #post_category_id').addClass('is-invalid'); // this one is required
+  $('.field_with_errors input').addClass('is-invalid');
+  $('.field_with_errors select').addClass('is-invalid');
+  //$('.field_with_errors #post_category_id').addClass('is-invalid'); // this one is required
   $('.field_with_errors textarea:first').addClass('is-invalid');
 
   // Cacading select, Dependent dropdown, Dynamic form select

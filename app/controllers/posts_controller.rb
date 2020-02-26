@@ -50,7 +50,6 @@ class PostsController < ApplicationController
   		else
   			format.html { render :new }
   			format.json { render json: @post.errors, status: :unprocessable_entity }
-        Rails.logger.info @post.errors.messages
   		end
   	end
   end

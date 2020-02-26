@@ -213,6 +213,10 @@ footer .line.three::after {
   font-weight: 700;
 }
 
+.field_with_errors select, .field_with_errors input, .field_with_errors textarea {
+  
+}
+
 .rounded-circle { 
     border-radius: 50% !important;
     width: 140px;
@@ -280,7 +284,7 @@ div[data-toggle="collapse"]{
    /*border-bottom:1px solid #BBDEFB;*/
    width:100%;
    cursor:pointer;
-   padding:1%;
+   /*padding:1%;*/
 }
 .collapse{
     /*background:#F5F5F5;*/

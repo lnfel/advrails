@@ -7,6 +7,7 @@ $(document).on("turbolinks:load", function() {
   console.log("Dev log: script loaded!");
   $('[data-toggle="tooltip"]').tooltip();
   // Initialize toast notifications / alerts
+  //$('.toast').toast({ autohide: false });
   $('.toast').toast({ delay: 2000 });
   $('.toast').toast('show');
 
@@ -19,6 +20,12 @@ $(document).on("turbolinks:load", function() {
       alert("You are only allowed to upload a maximum of 4 files");
   	}
 	});
+
+  // Initialize invalid classes on turbolinks load
+  $('.field_with_errors input').addClass('is-invalid');
+  $('.field_with_errors select').addClass('is-invalid');
+  //$('.field_with_errors #post_category_id').addClass('is-invalid'); // this one is required
+  $('.field_with_errors textarea:first').addClass('is-invalid');
 
   // Cacading select, Dependent dropdown, Dynamic form select
   // https://fool-dev.com/how-to-create-a-dependent-dropdown-in-ruby-on-rails/

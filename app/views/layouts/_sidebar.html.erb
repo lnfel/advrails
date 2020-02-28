@@ -12,7 +12,7 @@
 <div class="accordion position-absolute" id="asideNav">
 	<!-- mb-3 to avoid hitting footer edge -->
 	<div class="sticky mb-3">
-	<div class="card" style="border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;">
+	<div class="card border-bottom-0" style="border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;">
 		<div class="card-header bg-su-blue p-0" id="asideNavOne">
 			<h2 class="mb-0">
 				<button class="btn btn-block btn-primary text-center text-xl-left" type="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -34,15 +34,15 @@
 							<% end %>
 						</a>
 					</li>
-					<li class="nav-item border-bottom">
+					<!-- <li class="nav-item border-bottom">
 						<a class="nav-link d-flex align-items-center justify-content-center justify-content-md-between" href="#">
 							<div>
 								<i class="fas fa-home"></i>
 								<span class="d-none d-xl-inline"> Housing</span>
 							</div>
-							<% if Post.housing.recent.any? %>
-								<span class="badge badge-danger rounded-0 d-none d-md-inline px-2"><%= Post.housing.recent.count %></span>
-							<% end %>
+							<%# if Post.housing.recent.any? %>
+								<span class="badge badge-danger rounded-0 d-none d-md-inline px-2"><%#= Post.housing.recent.count %></span>
+							<%# end %>
 						</a>
 					</li>
 					<li class="nav-item border-bottom">
@@ -50,9 +50,9 @@
 							<div>
 								<i class="fas fa-dollar-sign" mr-2></i><span class="d-none d-xl-inline"> For Sale</span>
 							</div>
-							<% if Post.forsale.recent.any? %>
-								<span class="badge badge-danger rounded-0 d-none d-md-inline px-2"><%= Post.forsale.recent.count %></span>
-							<% end %>
+							<%# if Post.forsale.recent.any? %>
+								<span class="badge badge-danger rounded-0 d-none d-md-inline px-2"><%#= Post.forsale.recent.count %></span>
+							<%# end %>
 						</a>
 					</li>
 					<li class="nav-item border-bottom">
@@ -60,9 +60,9 @@
 							<div>
 								<i class="fas fa-user-check"></i><span class="d-none d-xl-inline"> Jobs</span>
 							</div>
-							<% if Post.jobs.recent.any? %>
-								<span class="badge badge-danger rounded-0 d-none d-md-inline px-2"><%= Post.jobs.recent.count %></span>
-							<% end %>
+							<%# if Post.jobs.recent.any? %>
+								<span class="badge badge-danger rounded-0 d-none d-md-inline px-2"><%#= Post.jobs.recent.count %></span>
+							<%# end %>
 						</a>
 					</li>
 					<li class="nav-item border-bottom">
@@ -70,9 +70,9 @@
 							<div>
 								<i class="fas fa-hand-holding-heart"></i><span class="d-none d-xl-inline"> Personals</span>
 							</div>
-							<% if Post.personals.recent.any? %>
-								<span class="badge badge-danger rounded-0 d-none d-md-inline px-2"><%= Post.personals.recent.count %></span>
-							<% end %>
+							<%# if Post.personals.recent.any? %>
+								<span class="badge badge-danger rounded-0 d-none d-md-inline px-2"><%#= Post.personals.recent.count %></span>
+							<%# end %>
 						</a>
 					</li>
 					<li class="nav-item border-bottom">
@@ -80,9 +80,9 @@
 							<div>
 								<i class="fas fa-handshake"></i><span class="d-none d-xl-inline"> Campus Job</span>
 							</div>
-							<% if Post.campus.recent.any? %>
-								<span class="badge badge-danger rounded-0 d-none d-md-inline px-2"><%= Post.campus.recent.count %></span>
-							<% end %>
+							<%# if Post.campus.recent.any? %>
+								<span class="badge badge-danger rounded-0 d-none d-md-inline px-2"><%#= Post.campus.recent.count %></span>
+							<%# end %>
 						</a>
 					</li>
 					<li class="nav-item border-bottom">
@@ -90,9 +90,9 @@
 							<div>
 								<i class="fas fa-users"></i><span class="d-none d-xl-inline"> Community</span>
 							</div>
-							<% if Post.community.recent.any? %>
-								<span class="badge badge-danger rounded-0 d-none d-md-inline px-2"><%= Post.community.recent.count %></span>
-							<% end %>
+							<%# if Post.community.recent.any? %>
+								<span class="badge badge-danger rounded-0 d-none d-md-inline px-2"><%#= Post.community.recent.count %></span>
+							<%# end %>
 						</a>
 					</li>
 					<li class="nav-item">
@@ -100,40 +100,41 @@
 							<div>
 								<i class="fas fa-user-friends"></i><span class="d-none d-xl-inline"> Services</span>
 							</div>
-							<% if Post.services.recent.any? %>
-								<span class="badge badge-danger rounded-0 d-none d-md-inline px-2"><%= Post.services.recent.count %></span>
-							<% end %>
+							<%# if Post.services.recent.any? %>
+								<span class="badge badge-danger rounded-0 d-none d-md-inline px-2"><%#= Post.services.recent.count %></span>
+							<%# end %>
 						</a>
-					</li>
+					</li> -->
 					<%#= Type.pluck('name').map {|t| {name: t}}.each do |m| %>
 						<%#= m %>
 					<%# end %>
+					<%# type = Type.pluck('name').reverse %>
+					<%# query = Array.wrap(["housing", "forsale", "jobs", "personals", "campus", "community", "services"]) %>
 					<% icon = Array.wrap(["home", "dollar-sign", "user-check", "hand-holding-heart", "handshake", "users", "user-friends"]) %>
-					<% type = Type.pluck('name').reverse %>
+					<% type = Array.wrap(["Housing", "For Sale", "Jobs", "Personals", "Campus Job", "Community", "Services"]) %>
+					<% query = Array.wrap([Post.housing.recent, Post.forsale.recent, Post.jobs.recent, Post.personals.recent, Post.campus.recent, Post.community.recent, Post.services.recent]) %>
 					<% type[0] %>
 					<% menu = Array.wrap([]) %>
 					<% i = 0 %>
 					<% while i < 6 do %>
-						<% menu.push({icon: icon[i], type: type[i]}) %>
+						<% menu.push({icon: icon[i], type: type[i], query: query[i]}) %>
 						<% i += 1 %>
 					<% end %>
+					<% menu %>
 					<% icon[0] %>
-					<%# Type.pluck('name').each do |m| %>
-						<!-- <li class="nav-item border-bottom">
+					<% menu.each do |m| %>
+						<li class="nav-item border-bottom">
 							<a class="nav-link d-flex align-items-center justify-content-center justify-content-md-between" href="/posts">
 								<div>
-									<%# while i < 6 do %>
-									<i class="fas fa-<%#= icon[i] %>"></i>
-									<%# i += 1 %>
-									<%# end %>
-									<span class="d-none d-xl-inline"> <%#= m %></span>
+									<i class="fas fa-<%= m[:icon] %>"></i>
+									<span class="d-none d-xl-inline"> <%= m[:type] %></span>
 								</div>
-								<%# if Post.recent.any? %>
-									<span class="badge badge-danger rounded-0 d-none d-md-inline px-2"><%#= Post.recent.count %></span>
-								<%# end %>
+								<% if m[:query].any? %>
+									<span class="badge badge-danger rounded-0 d-none d-md-inline px-2"><%= m[:query].count %></span>
+								<% end %>
 							</a>
-						</li> -->
-					<%# end %>
+						</li>
+					<% end %>
 				</ul>
 			</div>
 		</div>

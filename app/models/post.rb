@@ -15,7 +15,7 @@ class Post < ApplicationRecord
 
   # kaminari pagination config via model
   # for global config look in: config/initializers/kaminari_config.rb
-  paginates_per 1
+  paginates_per 2
 
   # enable searchkick
   searchkick word_start: [:title]
@@ -30,4 +30,15 @@ class Post < ApplicationRecord
   #    feature_image: feature_images[0]
   #  }
   #end
+
+  # Scope are used for chained queries like "Post.housing.recent.count" which counts Post with type_id of 3 and created with the last 24 hours
+  # https://guides.rubyonrails.org/active_record_querying.html#merging-of-scopes
+  scope :recent, -> { where created_at: 24.hours.ago..Time.now }
+  scope :housing, -> { where type_id: 3 }
+  scope :forsale, -> { where type_id: 1 }
+  scope :jobs, -> { where type_id: 8 }
+  scope :personals, -> { where type_id: 2 }
+  scope :campus, -> { where type_id: 7 }
+  scope :community, -> { where type_id: 5 }
+  scope :services, -> { where type_id: 6 }
 end

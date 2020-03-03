@@ -11,6 +11,18 @@ body {
   font-family: 'Nunito', sans-serif!important; /* Override bootstrap reboot PT Sans */
 }
 
+/*body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #ccc;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: $su-blue;
+}*/
+
 .navbar {
 
 	.navbar-collapse {

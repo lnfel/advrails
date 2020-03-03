@@ -23,6 +23,7 @@
 		<div class="collapse show" id="collapseOne" aria-labelledby="asideNavOne" data-parent="#asideNav">
 			<div class="card-body p-0">
 				<ul class="nav flex-column">
+					<form action="/posts" method="get">
 					<li class="nav-item border-bottom">
 						<a class="nav-link d-flex align-items-center justify-content-center justify-content-md-between" href="/posts">
 							<div>
@@ -34,77 +35,13 @@
 							<% end %>
 						</a>
 					</li>
+
+					<!-- Sample of passing params like a query url -->
+					<!-- url: /posts?paid=true -->
 					<!-- <li class="nav-item border-bottom">
-						<a class="nav-link d-flex align-items-center justify-content-center justify-content-md-between" href="#">
-							<div>
-								<i class="fas fa-home"></i>
-								<span class="d-none d-xl-inline"> Housing</span>
-							</div>
-							<%# if Post.housing.recent.any? %>
-								<span class="badge badge-danger rounded-0 d-none d-md-inline px-2"><%#= Post.housing.recent.count %></span>
-							<%# end %>
-						</a>
-					</li>
-					<li class="nav-item border-bottom">
-						<a class="nav-link d-flex align-items-center justify-content-center justify-content-md-between" href="#">
-							<div>
-								<i class="fas fa-dollar-sign" mr-2></i><span class="d-none d-xl-inline"> For Sale</span>
-							</div>
-							<%# if Post.forsale.recent.any? %>
-								<span class="badge badge-danger rounded-0 d-none d-md-inline px-2"><%#= Post.forsale.recent.count %></span>
-							<%# end %>
-						</a>
-					</li>
-					<li class="nav-item border-bottom">
-						<a class="nav-link d-flex align-items-center justify-content-center justify-content-md-between" href="#">
-							<div>
-								<i class="fas fa-user-check"></i><span class="d-none d-xl-inline"> Jobs</span>
-							</div>
-							<%# if Post.jobs.recent.any? %>
-								<span class="badge badge-danger rounded-0 d-none d-md-inline px-2"><%#= Post.jobs.recent.count %></span>
-							<%# end %>
-						</a>
-					</li>
-					<li class="nav-item border-bottom">
-						<a class="nav-link d-flex align-items-center justify-content-center justify-content-md-between" href="#">
-							<div>
-								<i class="fas fa-hand-holding-heart"></i><span class="d-none d-xl-inline"> Personals</span>
-							</div>
-							<%# if Post.personals.recent.any? %>
-								<span class="badge badge-danger rounded-0 d-none d-md-inline px-2"><%#= Post.personals.recent.count %></span>
-							<%# end %>
-						</a>
-					</li>
-					<li class="nav-item border-bottom">
-						<a class="nav-link d-flex align-items-center justify-content-center justify-content-md-between" href="#">
-							<div>
-								<i class="fas fa-handshake"></i><span class="d-none d-xl-inline"> Campus Job</span>
-							</div>
-							<%# if Post.campus.recent.any? %>
-								<span class="badge badge-danger rounded-0 d-none d-md-inline px-2"><%#= Post.campus.recent.count %></span>
-							<%# end %>
-						</a>
-					</li>
-					<li class="nav-item border-bottom">
-						<a class="nav-link d-flex align-items-center justify-content-center justify-content-md-between" href="#">
-							<div>
-								<i class="fas fa-users"></i><span class="d-none d-xl-inline"> Community</span>
-							</div>
-							<%# if Post.community.recent.any? %>
-								<span class="badge badge-danger rounded-0 d-none d-md-inline px-2"><%#= Post.community.recent.count %></span>
-							<%# end %>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link d-flex align-items-center justify-content-center justify-content-md-between" href="#">
-							<div>
-								<i class="fas fa-user-friends"></i><span class="d-none d-xl-inline"> Services</span>
-							</div>
-							<%# if Post.services.recent.any? %>
-								<span class="badge badge-danger rounded-0 d-none d-md-inline px-2"><%#= Post.services.recent.count %></span>
-							<%# end %>
-						</a>
+						<%#= link_to "Posts", posts_path(paid: true), class: "nav-link d-flex align-items-center justify-content-center justify-content-md-between" %>
 					</li> -->
+
 					<%#= Type.pluck('name').map {|t| {name: t}}.each do |m| %>
 						<%#= m %>
 					<%# end %>
@@ -112,19 +49,20 @@
 					<%# query = Array.wrap(["housing", "forsale", "jobs", "personals", "campus", "community", "services"]) %>
 					<% icon = Array.wrap(["home", "dollar-sign", "user-check", "hand-holding-heart", "handshake", "users", "user-friends"]) %>
 					<% type = Array.wrap(["Housing", "For Sale", "Jobs", "Personals", "Campus Job", "Community", "Services"]) %>
+					<% id = Array.wrap([3, 1, 8, 2, 7, 5, 6]) %>
 					<% query = Array.wrap([Post.housing.recent, Post.forsale.recent, Post.jobs.recent, Post.personals.recent, Post.campus.recent, Post.community.recent, Post.services.recent]) %>
 					<% type[0] %>
 					<% menu = Array.wrap([]) %>
 					<% i = 0 %>
 					<% while i < 6 do %>
-						<% menu.push({icon: icon[i], type: type[i], query: query[i]}) %>
+						<% menu.push({id: id[i], icon: icon[i], type: type[i], query: query[i]}) %>
 						<% i += 1 %>
 					<% end %>
 					<% menu %>
 					<% icon[0] %>
 					<% menu.each do |m| %>
 						<li class="nav-item border-bottom">
-							<a class="nav-link d-flex align-items-center justify-content-center justify-content-md-between" href="/posts">
+							<a class="nav-link d-flex align-items-center justify-content-center justify-content-md-between" href="/posts?type=<%= m[:id] %>">
 								<div>
 									<i class="fas fa-<%= m[:icon] %>"></i>
 									<span class="d-none d-xl-inline"> <%= m[:type] %></span>
@@ -135,6 +73,7 @@
 							</a>
 						</li>
 					<% end %>
+					</form>
 				</ul>
 			</div>
 		</div>

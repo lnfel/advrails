@@ -10,8 +10,15 @@ class PostsController < ApplicationController
   	#else
   	#	@posts = Post.order(created_at: :desc).page(params[:page])
   	#end
-  	@posts = Post.with_attached_feature_images.order(created_at: :desc).page(params[:page])
   	@types = Type.all
+
+    if params[:type].nil?
+      # Show all posts or first 20 recent posts
+      @posts = Post.with_attached_feature_images.order(created_at: :desc).page(params[:page])
+    else
+      # Show recent posts by type
+      @posts = Post.where(type_id: params[:type]).order(created_at: :desc).page(params[:page])
+    end
   end
 
   def new

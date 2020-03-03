@@ -169,23 +169,28 @@ textarea.form-control {
 }
 
 select.form-control:not([size]):not([multiple]) {
-    height: 56px;
-    color: #50595e;
+    /*height: 56px;*/ /* this line messes up with other select tags, removing this to preserve consistency across code */
+    /*color: #50595e;*/ /* redundant code */
 }
 
 .form-control:focus {
-    color: #06131a !important;
+    /*color: #06131a !important;
     outline: 0;
     box-shadow: 0 0 0 0.1rem rgb(234, 231, 222);
-    border-color: #06131a;
+    border-color: #06131a;*/
+    /*
+      Note: Setting the outline to black reduces focus visibility on the end user's perspective
+      this also causes conflict with other form fields such as select tags
+    */
+    /* Let's stick with bootstrap's default for now */
 }
 
 input::-webkit-input-placeholder {
-    color: #50595e !important;
+    /*color: #50595e !important;*/ /* redundant code */
 }
 
 textarea::-webkit-input-placeholder {
-    color: #50595e !important;
+    /*color: #50595e !important;*/ /* redundant code */
 }
 
 .service-form {

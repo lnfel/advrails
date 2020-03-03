@@ -1,3 +1,4 @@
+<% provide(:title, @post.title) %>
 <%#= link_to @post do %>
 	<%#= @post.feature_images.each do |i| %>
   	<%#= image_tag @post.feature_images[0] if @post.feature_images[0].present? %>
@@ -81,8 +82,8 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/">Home</a></li>
           <li class="breadcrumb-item"><%= link_to "Posts", posts_path %></li>
-          <li class="breadcrumb-item"><a href="#"><%= Type.find_by(id: @post.type_id).name %></a></li>
-          <li class="breadcrumb-item active" aria-current="page"><%= Category.find_by(id: @post.category_id).name %></li>
+          <li class="breadcrumb-item"><a href="/posts?type=<%= @post.type_id %>"><%= Type.find_by(id: @post.type_id).name %></a></li>
+          <li class="breadcrumb-item active" aria-current="page"><a href="#"><%= Category.find_by(id: @post.category_id).name %></a></li>
         </ol>
       </nav>
       <section class="pb-4">

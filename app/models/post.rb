@@ -34,7 +34,7 @@ class Post < ApplicationRecord
   # Scope are used for chained queries like "Post.housing.recent.count" which counts Post with type_id of 3 and created with the last 24 hours
   # https://guides.rubyonrails.org/active_record_querying.html#merging-of-scopes
   scope :recent, -> { where created_at: 24.hours.ago..Time.now }
-  scope :housing, -> { where type_id: 3 }
+  scope :housing, -> { where type_id: 3..4 }
   scope :forsale, -> { where type_id: 1 }
   scope :jobs, -> { where type_id: 8 }
   scope :personals, -> { where type_id: 2 }

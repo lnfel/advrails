@@ -17,7 +17,7 @@ class PostsController < ApplicationController
       @posts = Post.with_attached_feature_images.order(created_at: :desc).page(params[:page])
     else
       # Show recent posts by type
-      @posts = Post.where(type_id: params[:type]).order(created_at: :desc).page(params[:page])
+      @posts = params[:type] == "3" ? Post.housing.order(created_at: :desc).page(params[:page]) : Post.where(type_id: params[:type]).order(created_at: :desc).page(params[:page])
     end
   end
 

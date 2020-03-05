@@ -1,5 +1,5 @@
-<% icon = Array.wrap(["newspaper", "dollar-sign", "hand-holding-heart", "home", "", "users", "user-friends", "handshake", "user-check"]) %>
-<% type = Array.wrap(["Posts", "For Sale", "Personals", "Housing", "", "Community", "Services", "Campus Job", "Jobs off-campus"]) %>
+<% icon = Array.wrap(["newspaper", "dollar-sign", "hand-holding-heart", "home", "home", "users", "user-friends", "handshake", "user-check"]) %>
+<% type = Array.wrap(["Posts", "For Sale", "Personals", "Housing", "Housing (need)", "Community", "Services", "Campus Job", "Jobs off-campus"]) %>
 <% provide(:title, type[params[:type].to_i]) %>
 
 <!-- <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;"> -->
@@ -51,7 +51,24 @@
 		</aside>
 		<!-- <section class="container py-4 mb-4"> -->
 		<section class="col-10 col-md-10 p-md-0 px-lg-3">
-			<h1 class="position-relative d-inline-block line mb-4"><i class="fas fa-<%= params[:type].nil? ? icon[0] : icon[params[:type].to_i] %>"></i> <%= params[:type].nil? ? "Posts" : type[params[:type].to_i] %></h1>
+			<% if params[:category].present? %>
+				<nav aria-label="breadcrumb">
+	        <ol class="breadcrumb">
+	          <li class="breadcrumb-item"><a href="/">Home</a></li>
+	          <li class="breadcrumb-item"><%= link_to "Posts", posts_path %></li>
+	          <li class="breadcrumb-item"><a href="/posts?type=<%= params[:type] %>"><%= Type.find_by(id: params[:type]).name %></a></li>
+	          <li class="breadcrumb-item active" aria-current="page">
+	            <a href="/posts?category=<%= params[:category] %>">
+	              <%= Category.find_by(id: params[:category]).name %>
+	            </a>
+	          </li>
+	        </ol>
+	      </nav>
+			<% else %>
+			<h1 class="position-relative d-inline-block line mb-4">
+				<i class="fas fa-<%= params[:type].nil? ? icon[0] : icon[params[:type].to_i] %>"></i> <%= params[:type].nil? ? "Posts" : type[params[:type].to_i] %>
+			</h1>
+			<% end %>
 
 			<%= paginate @posts %>
 
@@ -69,13 +86,15 @@
 			  </ul>
 			</nav> -->
 			<%# if true %>
-			<% if @posts.length.nil? %>
+			<%#= @posts.blank? %>
+			<% if @posts.blank? %>
+
 				<div class="row m-md-0 mx-lg-1">
 					<div class="col mb-4">
-						<div class="card text-center rounded" style="min-height: 250px;">
+						<div class="card text-center rounded" style="min-height: 300px;">
 							<div class="card-body d-flex align-items-center justify-content-center">
 								<div>
-									<h5 class="card-title text-secondary"><i class="fas fa-exclamation-triangle"></i> Nothing has been posted yet.</h5>
+									<h5 class="card-title text-secondary"><i class="fas fa-exclamation-triangle"></i> Nothing seems to be posted yet.</h5>
 									<a href="/posts/new" class="btn btn-primary">Submit the very first Post</a>
 								</div>
 							</div>
@@ -100,8 +119,8 @@
 						    <div class="card-body">
 						      <h5 class="card-title"><%= link_to p.title, post_path(p.id), class: 'text-decoration-none' %></h5>
 						      <div class="card-text"><%= markdown.render(p.description.truncate(150, omission: ' ...')).html_safe %></div>
-						      <%= link_to Type.find_by(id: p.type_id).name, "#", class: 'badge badge-primary px-3 py-2 mb-2' %>
-							    <%= link_to Category.find_by(id: p.category_id).name, "#", class: 'badge badge-primary px-3 py-2 mb-2' %>
+						      <%= link_to Type.find_by(id: p.type_id).name, posts_path(:type => p.type_id), class: 'badge badge-primary px-3 py-2 mb-2' %>
+							    <%= link_to Category.find_by(id: p.category_id).name, posts_path(:type => p.type_id, :category => p.category_id), class: 'badge badge-primary px-3 py-2 mb-2' %>
 						    </div>
 						    <div class="card-footer text-muted">
 					      	<p class="card-text"><%= time_ago_in_words(p.created_at) %> ago</p>

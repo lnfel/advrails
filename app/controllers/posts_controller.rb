@@ -13,10 +13,13 @@ class PostsController < ApplicationController
   	@types = Type.all
 
     if params[:type].nil?
-      # Show all posts or first 20 recent posts
-      @posts = Post.with_attached_feature_images.order(created_at: :desc).page(params[:page])
+      # If type is nil, show all posts or if category is present, show posts using category_id
+      @posts = params[:category].present? ? Post.where(category_id: params[:category]).order(created_at: :desc).page(params[:page]) : Post.with_attached_feature_images.order(created_at: :desc).page(params[:page])
+    elsif params[:type].present? and params[:category].present?
+      # If type and category have values
+      @posts = Post.where(category_id: params[:category]).order(created_at: :desc).page(params[:page])
     else
-      # Show recent posts by type
+      # If type has value show posts using type_id or if type is equal to 3, show posts using type_id 3 and 4 (Post.housing)
       @posts = params[:type] == "3" ? Post.housing.order(created_at: :desc).page(params[:page]) : Post.where(type_id: params[:type]).order(created_at: :desc).page(params[:page])
     end
   end

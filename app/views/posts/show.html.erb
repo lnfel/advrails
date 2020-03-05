@@ -84,7 +84,7 @@
           <li class="breadcrumb-item"><%= link_to "Posts", posts_path %></li>
           <li class="breadcrumb-item"><a href="/posts?type=<%= @post.type_id %>"><%= Type.find_by(id: @post.type_id).name %></a></li>
           <li class="breadcrumb-item active" aria-current="page">
-            <a href="/posts?category=<%= @post.category_id %>">
+            <a href="/posts?type=<%= @post.type_id %>&category=<%= @post.category_id %>">
               <%= Category.find_by(id: @post.category_id).name %>
             </a>
           </li>

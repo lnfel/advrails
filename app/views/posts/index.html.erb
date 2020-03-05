@@ -58,7 +58,7 @@
 	          <li class="breadcrumb-item"><%= link_to "Posts", posts_path %></li>
 	          <li class="breadcrumb-item"><a href="/posts?type=<%= params[:type] %>"><%= Type.find_by(id: params[:type]).name %></a></li>
 	          <li class="breadcrumb-item active" aria-current="page">
-	            <a href="/posts?category=<%= params[:category] %>">
+	            <a href="/posts?type=<%= params[:type] %>&category=<%= params[:category] %>">
 	              <%= Category.find_by(id: params[:category]).name %>
 	            </a>
 	          </li>

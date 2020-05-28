@@ -40,7 +40,7 @@ gem "aws-sdk-s3", require: false
 # Text Markdown
 gem 'redcarpet', '3.5.0'
 # Pagination
-gem 'kaminari', '1.1.1'
+gem 'kaminari', '1.2.1'
 # Global Search
 gem 'searchkick', '4.2.1'
 # Faker

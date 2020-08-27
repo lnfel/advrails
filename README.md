@@ -1,3 +1,3 @@
-# Ruby on Rails 6
+# SUPost Rebuild using Ruby on Rails 6
 
-Test app for deployment on the web
+[Link to Production test](http://supost-test.herokuapp.com/)

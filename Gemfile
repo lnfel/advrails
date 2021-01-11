@@ -38,7 +38,7 @@ gem 'jquery-rails', '4.3.5'
 gem 'mini_magick', '4.9.4'
 gem "aws-sdk-s3", require: false
 # Text Markdown
-gem 'redcarpet', '3.5.0'
+gem 'redcarpet', '3.5.1'
 # Pagination
 gem 'kaminari', '1.1.1'
 # Global Search
